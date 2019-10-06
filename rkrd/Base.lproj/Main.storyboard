@@ -100,6 +100,12 @@
                                     <constraint firstAttribute="trailing" secondItem="Xmn-42-Oeo" secondAttribute="trailing" constant="78" id="yjR-g3-3RU"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWf-pG-jGt" userLabel="test">
+                                <rect key="frame" x="20" y="151" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -132,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="rkrdText" destination="HtG-mR-T3O" id="yyI-an-pxZ"/>
+                        <outlet property="test" destination="PWf-pG-jGt" id="Ieb-lp-YL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-DT-abR" userLabel="First Responder" sceneMemberID="firstResponder"/>
