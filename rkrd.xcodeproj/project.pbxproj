@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CD1ED1CE234AAE2D00CB6D09 /* RkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */; };
+		CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */; };
 		CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59822B95C9F0090A05C /* AppDelegate.swift */; };
-		CDF8F59B22B95C9F0090A05C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59A22B95C9F0090A05C /* MainViewController.swift */; };
+		CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */; };
 		CDF8F59E22B95C9F0090A05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F59C22B95C9F0090A05C /* Main.storyboard */; };
 		CDF8F5A022B95C9F0090A05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F59F22B95C9F0090A05C /* Assets.xcassets */; };
 		CDF8F5A322B95C9F0090A05C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */; };
@@ -36,9 +37,10 @@
 
 /* Begin PBXFileReference section */
 		CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RkrdView.swift; sourceTree = "<group>"; };
+		CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59522B95C9F0090A05C /* rkrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rkrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F59822B95C9F0090A05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDF8F59A22B95C9F0090A05C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59D22B95C9F0090A05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDF8F59F22B95C9F0090A05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF8F5A222B95C9F0090A05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */,
+				CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */,
 				CDF8F59822B95C9F0090A05C /* AppDelegate.swift */,
-				CDF8F59A22B95C9F0090A05C /* MainViewController.swift */,
+				CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */,
 				CDF8F59C22B95C9F0090A05C /* Main.storyboard */,
 				CDF8F59F22B95C9F0090A05C /* Assets.xcassets */,
 				CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */,
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF8F59B22B95C9F0090A05C /* MainViewController.swift in Sources */,
+				CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */,
+				CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */,
 				CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */,
 				CD1ED1CE234AAE2D00CB6D09 /* RkrdView.swift in Sources */,
 			);
