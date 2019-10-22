@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var rkrdText: UITextField!
     
-    @IBOutlet weak var oneView: RkrdView!
+    @IBOutlet weak var oneView: UIView!
     
     @IBOutlet weak var valueText: UITextField!
     
@@ -35,6 +35,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var averageValue: UILabel!
     
+    @IBAction func oneSegue(_ sender: Any) {
+        performSegue(withIdentifier: "oneSegue", sender: self)
+    }
     @IBAction func twoSegue(_ sender: Any) {
         performSegue(withIdentifier: "twoSegue", sender: self)
     }
@@ -44,8 +47,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(rkrdsArray)
-        print(valuesArray)
+//        print(rkrdsArray)
+//        print(valuesArray)
         // Do any additional setup after loading the view.
     }
     

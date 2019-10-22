@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD1ED1CE234AAE2D00CB6D09 /* RkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */; };
+		CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */; };
 		CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */; };
 		CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59822B95C9F0090A05C /* AppDelegate.swift */; };
 		CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */; };
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RkrdView.swift; sourceTree = "<group>"; };
+		CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRkrdView.swift; sourceTree = "<group>"; };
 		CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59522B95C9F0090A05C /* rkrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rkrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F59822B95C9F0090A05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 		CDF8F59722B95C9F0090A05C /* rkrd */ = {
 			isa = PBXGroup;
 			children = (
-				CD1ED1CD234AAE2D00CB6D09 /* RkrdView.swift */,
 				CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */,
 				CDF8F59822B95C9F0090A05C /* AppDelegate.swift */,
 				CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */,
@@ -109,6 +108,7 @@
 				CDF8F59F22B95C9F0090A05C /* Assets.xcassets */,
 				CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */,
 				CDF8F5A422B95C9F0090A05C /* Info.plist */,
+				CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */,
 			);
 			path = rkrd;
 			sourceTree = "<group>";
@@ -263,9 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */,
+				CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */,
 				CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */,
 				CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */,
-				CD1ED1CE234AAE2D00CB6D09 /* RkrdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
