@@ -11,7 +11,7 @@
         <!--Main Rkrd Controller-->
         <scene sceneID="jwC-HN-Ohl">
             <objects>
-                <viewController title="Main Rkrd Controller" modalPresentationStyle="pageSheet" id="7C4-iX-lGN" customClass="ViewController" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main Rkrd Controller" modalPresentationStyle="pageSheet" id="7C4-iX-lGN" customClass="MainRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3vQ-fT-HO1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,8 +93,8 @@
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="averageValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf5-ia-87h">
-                                        <rect key="frame" x="54.5" y="120" width="92.5" height="17"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oneAverageValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf5-ia-87h">
+                                        <rect key="frame" x="41" y="120" width="119" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -106,22 +106,28 @@
                                             <action selector="oneSegueBack:" destination="8tZ-g0-ZHt" eventType="touchUpInside" id="Oo4-tc-xg2"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_rkrd" translatesAutoresizingMaskIntoConstraints="NO" id="zDb-BG-Yyr">
-                                        <rect key="frame" x="77" y="189" width="47" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pC-jI-fxR">
                                         <rect key="frame" x="81" y="141" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bestValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-xz-AT8">
-                                        <rect key="frame" x="66" y="165" width="69" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oneBestValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-xz-AT8">
+                                        <rect key="frame" x="53.5" y="165" width="94.5" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoK-bP-b4o">
+                                        <rect key="frame" x="78" y="185" width="44" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="jbd-uf-VBw"/>
+                                        </constraints>
+                                        <state key="normal" image="add_rkrd"/>
+                                        <connections>
+                                            <action selector="add_rkrd_one:" destination="7C4-iX-lGN" eventType="touchUpInside" id="xjK-92-9De"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="top" secondItem="7V7-pa-4DD" secondAttribute="top" id="3F2-6g-CBf"/>
@@ -130,9 +136,11 @@
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="centerX" secondItem="7V7-pa-4DD" secondAttribute="centerX" id="DJa-Tw-3sU"/>
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="centerY" secondItem="MU6-1g-x1y" secondAttribute="centerY" id="H89-eg-iJE"/>
                                     <constraint firstItem="MU6-1g-x1y" firstAttribute="centerY" secondItem="cob-SK-pYQ" secondAttribute="centerY" id="J8O-Cm-BYB"/>
+                                    <constraint firstItem="OoK-bP-b4o" firstAttribute="leading" secondItem="cob-SK-pYQ" secondAttribute="leading" constant="78" id="MqJ-WK-4ph"/>
                                     <constraint firstItem="tf5-ia-87h" firstAttribute="top" secondItem="sB2-YJ-Cnt" secondAttribute="bottom" constant="5" id="NHM-Wg-too"/>
                                     <constraint firstItem="M52-GW-cnf" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="Nwb-5D-jul"/>
                                     <constraint firstItem="Wv6-c3-2DT" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="OjO-Ew-fbm"/>
+                                    <constraint firstItem="OoK-bP-b4o" firstAttribute="bottom" secondItem="MU6-1g-x1y" secondAttribute="bottom" constant="-4" id="TDL-a8-tyV"/>
                                     <constraint firstItem="MU6-1g-x1y" firstAttribute="top" secondItem="cob-SK-pYQ" secondAttribute="top" id="UlR-0r-Nju"/>
                                     <constraint firstItem="6kg-xz-AT8" firstAttribute="top" secondItem="1pC-jI-fxR" secondAttribute="bottom" constant="3" id="UoV-aE-5ZM"/>
                                     <constraint firstItem="sB2-YJ-Cnt" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="VrV-0R-Iqw"/>
@@ -140,6 +148,7 @@
                                     <constraint firstItem="MU6-1g-x1y" firstAttribute="top" secondItem="7V7-pa-4DD" secondAttribute="bottom" constant="-44" id="aB2-sD-a1j"/>
                                     <constraint firstItem="tf5-ia-87h" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="aqQ-t6-xh4"/>
                                     <constraint firstItem="Wv6-c3-2DT" firstAttribute="top" secondItem="7V7-pa-4DD" secondAttribute="bottom" constant="4" id="c7K-1y-FF9"/>
+                                    <constraint firstItem="OoK-bP-b4o" firstAttribute="centerX" secondItem="6kg-xz-AT8" secondAttribute="centerX" id="cbX-fO-ci8"/>
                                     <constraint firstItem="MU6-1g-x1y" firstAttribute="leading" secondItem="cob-SK-pYQ" secondAttribute="leading" id="dSb-ij-BBj"/>
                                     <constraint firstItem="1pC-jI-fxR" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="eev-CT-Uny"/>
                                     <constraint firstItem="M52-GW-cnf" firstAttribute="top" secondItem="Wv6-c3-2DT" secondAttribute="bottom" constant="3" id="pRt-hB-cmm"/>
@@ -147,11 +156,6 @@
                                     <constraint firstItem="6kg-xz-AT8" firstAttribute="centerX" secondItem="cob-SK-pYQ" secondAttribute="centerX" id="yhz-gQ-GCl"/>
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="leading" secondItem="cob-SK-pYQ" secondAttribute="leadingMargin" id="zbq-Wx-pdA"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="BOZ-IU-GnH"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-wB-tJ8" userLabel="add_rkrd_view">
                                 <rect key="frame" x="45" y="252" width="324" height="352"/>
@@ -316,17 +320,12 @@
                             <constraint firstItem="IfL-3Y-PMN" firstAttribute="bottom" secondItem="rlc-VO-rGm" secondAttribute="bottom" constant="34" id="vxe-LI-lt8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rlc-VO-rGm"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Wy9-wB-tJ8"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="T5A-Rx-qiN"/>
                     <connections>
-                        <outlet property="averageValue" destination="tf5-ia-87h" id="TPs-Vy-qvO"/>
+                        <outlet property="oneAverageValue" destination="tf5-ia-87h" id="Agk-oN-mPC"/>
+                        <outlet property="oneBestValue" destination="6kg-xz-AT8" id="Yn4-Q4-RnV"/>
                         <outlet property="oneRkrdText" destination="7V7-pa-4DD" id="o5R-ET-6DO"/>
-                        <outlet property="oneSegue" destination="BOZ-IU-GnH" id="s2u-qU-cxK"/>
                         <outlet property="oneValueText" destination="M52-GW-cnf" id="IBT-kX-qBh"/>
                         <outlet property="oneView" destination="cob-SK-pYQ" id="u7U-RA-6Yy"/>
                         <outlet property="rkrdText" destination="kft-JO-pGQ" id="cjv-ff-gn6"/>
