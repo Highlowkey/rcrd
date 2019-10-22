@@ -52,6 +52,13 @@ class MainRkrdView: UIViewController {
     @IBAction func oneSegue(_ sender: Any) {
         performSegue(withIdentifier: "oneSegue", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "oneSegue") {
+            let destination = segue.destination as! OneRkrdView
+            destination.test = rkrdsArray[0]
+        }
+    }
 
     @IBAction func twoSegue(_ sender: Any) {
         performSegue(withIdentifier: "twoSegue", sender: self)

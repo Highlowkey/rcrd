@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 
 
-class OneRkrdView: UIViewController {
+class OneRkrdView: MainRkrdView {
+    
+    var test: String?
+    @IBOutlet weak var oneRkrdViewText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oneRkrdViewText.text = test
         // Do any additional setup after loading the view.
     }
     
