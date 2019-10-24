@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MainRkrdView: UIViewController {
     
     var rkrdsArray: [String] = []
@@ -121,7 +120,7 @@ class MainRkrdView: UIViewController {
             self.view.viewWithTag(3)!.isHidden = false;
             twoValuesArray.append(valuesArray[valuesArray.count-1])
             twoRkrdText.text = rkrdsArray[rkrdsArray.count-1]
-            twoValueText.text = twoValuesArray[oneValuesArray.count-1]
+            twoValueText.text = twoValuesArray[twoValuesArray.count-1]
         }
         
         rkrdText.text!.removeAll()
