@@ -13,7 +13,7 @@ class MainRkrdView: UIViewController {
     
     var rkrdsArray: [String] = []
 
-    var valuesArray: [String] = ["-100000"]
+    var valuesArray: [String] = ["0"]
     
     var oneValuesArray: [String] = []
 
@@ -46,29 +46,21 @@ class MainRkrdView: UIViewController {
     @IBOutlet weak var oneBestValue: UILabel!
     
     @IBAction func addRkrdOne(_ sender: Any) {
-        rkrdText.text = oneRkrdText.text
-
-        self.view.viewWithTag(1)?.isHidden = false;
-        self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
-        self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
+        addRkrd(oneRkrdText.text!)
     }
     
     @IBAction func addRkrdTwo(_ sender: Any) {
-        rkrdText.text = twoRkrdText.text
-
-        self.view.viewWithTag(1)?.isHidden = false;
-        self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
-        self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
+        addRkrd(twoRkrdText.text!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! OneRkrdView
         if(segue.identifier == "oneSegue") {
-            destination.rkrdName = rkrdsArray[0]
+            destination.rkrdName = oneRkrdText.text
             destination.localValuesArray = oneValuesArray
         }
         if(segue.identifier == "twoSegue") {
-            destination.rkrdName = rkrdsArray[1]
+            destination.rkrdName = twoRkrdText.text
             destination.localValuesArray = twoValuesArray
         }
     }
@@ -79,16 +71,19 @@ class MainRkrdView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-    @IBAction func add_rkrd(_ sender: Any) {
-        print("Hello")
+    func addRkrd(_ rkrd: String = "") {
+        rkrdText.text = rkrd
+        
         self.view.viewWithTag(1)?.isHidden = false;
         self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
         self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
     }
     
+    @IBAction func addRkrdNew(_ sender: Any) {
+        addRkrd()
+    }
     @IBAction func done_adding(_ sender: Any) {
         self.view.viewWithTag(1)?.isHidden = true;
         rkrdsArray.append(rkrdText!.text!)
@@ -136,7 +131,6 @@ class MainRkrdView: UIViewController {
         rkrdText.text!.removeAll()
         valueText.text!.removeAll()
         self.view.endEditing(true)
-        
     }
     
     func calcAverage(_ valueArray: [String]) -> Double {
@@ -159,6 +153,15 @@ class MainRkrdView: UIViewController {
             }
         }
         return highestValue
+    }
+    
+    func application(_ application: UIApplication,
+                shouldSaveApplicationState coder: NSCoder) -> Bool {
+       // Save the current app version to the archive.
+       coder.encode(1.0, forKey: "rkrdVersion")
+            
+       // Always save state information.
+       return true
     }
 }
 

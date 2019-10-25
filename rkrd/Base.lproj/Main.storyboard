@@ -56,10 +56,10 @@
                                 <rect key="frame" x="150" y="722.5" width="114" height="76.5"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
-                                    <action selector="add_rkrd:" destination="7C4-iX-lGN" eventType="touchUpInside" id="uGi-aL-fbO"/>
+                                    <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ" customClass="RkrdView" customModule="rkrd" customModuleProvider="target">
+                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ">
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
@@ -124,8 +124,7 @@
                                         </constraints>
                                         <state key="normal" image="add_rkrd"/>
                                         <connections>
-                                            <action selector="addRkrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="QLJ-oy-Fkc"/>
-                                            <action selector="addRkrdTwo:" destination="7C4-iX-lGN" eventType="touchUpInside" id="5lf-f3-UNx"/>
+                                            <action selector="addRkrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="gGm-s5-IPR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -157,7 +156,7 @@
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="leading" secondItem="cob-SK-pYQ" secondAttribute="leadingMargin" id="zbq-Wx-pdA"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-AA-cY4" userLabel="Two View" customClass="RkrdView" customModule="rkrd" customModuleProvider="target">
+                            <view hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="MainRkrdView" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-AA-cY4" userLabel="Two View">
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
@@ -274,13 +273,13 @@
                                             <action selector="done_adding:" destination="7C4-iX-lGN" eventType="touchUpInside" id="hDX-O6-9Z8"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-bU-3Lo">
-                                        <rect key="frame" x="126" y="190" width="72.5" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your rkrd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-bU-3Lo">
+                                        <rect key="frame" x="124" y="184" width="76" height="20"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K40-J5-FZH">
-                                        <rect key="frame" x="138" y="160" width="48" height="26"/>
+                                        <rect key="frame" x="138" y="154" width="48" height="26"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -297,10 +296,11 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rkrd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kft-JO-pGQ">
-                                        <rect key="frame" x="114" y="119" width="94" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your activity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kft-JO-pGQ">
+                                        <rect key="frame" x="114" y="119" width="94" height="20"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -311,7 +311,7 @@
                                     <constraint firstItem="kft-JO-pGQ" firstAttribute="leading" secondItem="8ek-xE-pY1" secondAttribute="trailing" constant="-161" id="OTv-VX-AYE"/>
                                     <constraint firstItem="Xmn-42-Oeo" firstAttribute="bottom" secondItem="8ek-xE-pY1" secondAttribute="bottom" constant="-18" id="Ryc-53-PWJ"/>
                                     <constraint firstItem="Zkl-C7-7aq" firstAttribute="centerX" secondItem="Wy9-wB-tJ8" secondAttribute="centerX" id="TDC-yQ-shC"/>
-                                    <constraint firstItem="K40-J5-FZH" firstAttribute="top" secondItem="kft-JO-pGQ" secondAttribute="bottom" constant="7" id="TTw-BV-xrh"/>
+                                    <constraint firstItem="K40-J5-FZH" firstAttribute="top" secondItem="kft-JO-pGQ" secondAttribute="bottom" constant="15" id="TTw-BV-xrh"/>
                                     <constraint firstItem="8ek-xE-pY1" firstAttribute="leading" secondItem="kft-JO-pGQ" secondAttribute="trailing" constant="-158" id="W7u-1c-FNc"/>
                                     <constraint firstAttribute="bottom" secondItem="8ek-xE-pY1" secondAttribute="bottom" constant="21" id="Xyw-bG-ksI"/>
                                     <constraint firstItem="eao-bU-3Lo" firstAttribute="top" secondItem="K40-J5-FZH" secondAttribute="bottom" constant="4" id="cKi-4P-Zvj"/>
@@ -412,7 +412,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM2-9j-Kps">
-                                <rect key="frame" x="41" y="20" width="151" height="51"/>
+                                <rect key="frame" x="41" y="20" width="312" height="51"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -433,7 +433,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="gM2-9j-Kps" secondAttribute="trailing" constant="222" id="1OA-KD-1PS"/>
+                            <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="gM2-9j-Kps" secondAttribute="trailing" constant="61" id="1OA-KD-1PS"/>
                             <constraint firstItem="Vw7-Op-kay" firstAttribute="top" secondItem="2y5-64-wRr" secondAttribute="bottom" constant="17" id="CH0-mk-JSY"/>
                             <constraint firstItem="2y5-64-wRr" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="CQf-9N-R6Z"/>
                             <constraint firstItem="gM2-9j-Kps" firstAttribute="top" secondItem="Hgf-me-XhR" secondAttribute="top" constant="20" id="K1g-kl-3sk"/>
