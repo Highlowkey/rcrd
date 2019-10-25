@@ -13,7 +13,7 @@ class MainRkrdView: UIViewController {
     
     var rkrdsArray: [String] = []
 
-    var valuesArray: [String] = []
+    var valuesArray: [String] = ["-100000"]
     
     var oneValuesArray: [String] = []
 
@@ -34,35 +34,43 @@ class MainRkrdView: UIViewController {
     @IBOutlet weak var valueText: UITextField!
 
     @IBOutlet weak var twoRkrdText: UILabel!
-
+    
     @IBOutlet weak var twoValueText: UILabel!
-
+    
+    @IBOutlet weak var twoAverageValue: UILabel!
+    
+    @IBOutlet weak var twoBestValue: UILabel!
+    
     @IBOutlet weak var oneAverageValue: UILabel!
     
     @IBOutlet weak var oneBestValue: UILabel!
     
-    @IBAction func add_rkrd_one(_ sender: Any) {
+    @IBAction func addRkrdOne(_ sender: Any) {
         rkrdText.text = oneRkrdText.text
 
         self.view.viewWithTag(1)?.isHidden = false;
         self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
         self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
     }
+    
+    @IBAction func addRkrdTwo(_ sender: Any) {
+        rkrdText.text = twoRkrdText.text
 
-    @IBAction func oneSegue(_ sender: Any) {
-        performSegue(withIdentifier: "oneSegue", sender: self)
+        self.view.viewWithTag(1)?.isHidden = false;
+        self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
+        self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! OneRkrdView
         if(segue.identifier == "oneSegue") {
-            let destination = segue.destination as! OneRkrdView
             destination.rkrdName = rkrdsArray[0]
-            destination.localValuesArray = valuesArray
+            destination.localValuesArray = oneValuesArray
         }
-    }
-
-    @IBAction func twoSegue(_ sender: Any) {
-        performSegue(withIdentifier: "twoSegue", sender: self)
+        if(segue.identifier == "twoSegue") {
+            destination.rkrdName = rkrdsArray[1]
+            destination.localValuesArray = twoValuesArray
+        }
     }
 
     @IBAction func accountSegue(_ sender: Any) {
@@ -104,37 +112,53 @@ class MainRkrdView: UIViewController {
 
             oneRkrdText.text = rkrdsArray[rkrdsArray.count-1]
             oneValueText.text = oneValuesArray[oneValuesArray.count-1]
-            var sum: Double = 0
-            var average: Double
             
-            for n in oneValuesArray {
-                sum += Double(n)!
-            }
-
-            average = sum/Double((oneValuesArray.count))
-            oneAverageValue.text = String(average)
-            
-            var highestValue: Double = -1
-            for n in oneValuesArray {
-                if(Double(n)! > highestValue) {
-                    highestValue = Double(n)!
-                }
-            }
-            oneBestValue.text = String(highestValue)
+            oneAverageValue.text = String(calcAverage(oneValuesArray))
+            oneBestValue.text = String(calcHighest(oneValuesArray))
         }
         else if(rkrdsArray[rkrdsArray.count-1] == twoRkrdText.text || self.view.viewWithTag(3)!.isHidden) {
             self.view.bringSubviewToFront(self.view.viewWithTag(3)!)
             self.view.viewWithTag(3)!.isHidden = false;
-            twoValuesArray.append(valuesArray[valuesArray.count-1])
+
+            if(valueText.text != "") {
+                if(Double(valuesArray[valuesArray.count-1]) != nil) {
+                    twoValuesArray.append(valuesArray[valuesArray.count-1])
+                }
+            }
+
             twoRkrdText.text = rkrdsArray[rkrdsArray.count-1]
             twoValueText.text = twoValuesArray[twoValuesArray.count-1]
+            
+            twoAverageValue.text = String(calcAverage(twoValuesArray))
+            twoBestValue.text = String(calcHighest(twoValuesArray))
         }
         
         rkrdText.text!.removeAll()
         valueText.text!.removeAll()
         self.view.endEditing(true)
         
+    }
+    
+    func calcAverage(_ valueArray: [String]) -> Double {
+        var sum: Double = 0
+        var average: Double
         
+        for n in valueArray {
+            sum += Double(n)!
+        }
+
+        average = sum/Double((valueArray.count))
+        return average
+    }
+    
+    func calcHighest(_ valueArray: [String]) -> Double {
+        var highestValue: Double = Double(valueArray[0])!
+        for n in valueArray {
+            if(Double(n)! > highestValue) {
+                highestValue = Double(n)!
+            }
+        }
+        return highestValue
     }
 }
 
