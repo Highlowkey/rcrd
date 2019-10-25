@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Charts
 
 class MainRkrdView: UIViewController {
     
     var rkrdsArray: [String] = []
-    
+
     var valuesArray: [String] = []
     
     var oneValuesArray: [String] = []
@@ -55,7 +56,8 @@ class MainRkrdView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "oneSegue") {
             let destination = segue.destination as! OneRkrdView
-            destination.test = rkrdsArray[0]
+            destination.rkrdName = rkrdsArray[0]
+            destination.localValuesArray = valuesArray
         }
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B40B419602B13260C5D620B /* Pods_rkrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */; };
 		CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */; };
 		CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */; };
 		CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59822B95C9F0090A05C /* AppDelegate.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rkrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.debug.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRkrdView.swift; sourceTree = "<group>"; };
 		CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59522B95C9F0090A05C /* rkrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rkrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +54,7 @@
 		CDF8F5B422B95C9F0090A05C /* rkrdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rkrdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F5B822B95C9F0090A05C /* rkrdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rkrdUITests.swift; sourceTree = "<group>"; };
 		CDF8F5BA22B95C9F0090A05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.release.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B40B419602B13260C5D620B /* Pods_rkrd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A19E378651FACE608C0AB42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */,
+				F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CDF8F58C22B95C9E0090A05C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +100,8 @@
 				CDF8F5AC22B95C9F0090A05C /* rkrdTests */,
 				CDF8F5B722B95C9F0090A05C /* rkrdUITests */,
 				CDF8F59622B95C9F0090A05C /* Products */,
+				0A19E378651FACE608C0AB42 /* Pods */,
+				D40A360ED78EF78DA629D452 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +148,14 @@
 			path = rkrdUITests;
 			sourceTree = "<group>";
 		};
+		D40A360ED78EF78DA629D452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDF8F5BD22B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrd" */;
 			buildPhases = (
+				68E614EF7995D95CF3B39BA0 /* [CP] Check Pods Manifest.lock */,
 				CDF8F59122B95C9E0090A05C /* Sources */,
 				CDF8F59222B95C9E0090A05C /* Frameworks */,
 				CDF8F59322B95C9E0090A05C /* Resources */,
+				B6DA938DC4C0C1CD83646972 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68E614EF7995D95CF3B39BA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rkrd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6DA938DC4C0C1CD83646972 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CDF8F59122B95C9E0090A05C /* Sources */ = {
@@ -438,6 +507,7 @@
 		};
 		CDF8F5BE22B95C9F0090A05C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +526,7 @@
 		};
 		CDF8F5BF22B95C9F0090A05C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
