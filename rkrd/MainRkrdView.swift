@@ -8,20 +8,22 @@
 
 import UIKit
 import Charts
+import Foundation
+import os.log
 
 class MainRkrdView: UIViewController {
     
     var rkrdsArray: [String] = []
-
-    var valuesArray: [String] = ["0"]
     
-    var oneValuesArray: [String] = []
-
-    var twoValuesArray: [String] = []
+    var isOneRkrd: Bool = false
     
-    var oneRkrd: Bool = false
+    var isTwoRkrd: Bool = false
     
-    var twoRkrd: Bool = false
+    var oneRkrd: Rkrd = Rkrd.init("", [])
+    
+    var twoRkrd: Rkrd = Rkrd.init("", [])
+    
+    var rkrds: [Rkrd] = []
 
     @IBOutlet weak var oneRkrdText: UILabel!
 
@@ -56,12 +58,12 @@ class MainRkrdView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! OneRkrdView
         if(segue.identifier == "oneSegue") {
-            destination.rkrdName = oneRkrdText.text
-            destination.localValuesArray = oneValuesArray
+            destination.rkrdName = oneRkrd.rkrdName
+            destination.localValuesArray = oneRkrd.rkrdValuesArray
         }
         if(segue.identifier == "twoSegue") {
-            destination.rkrdName = twoRkrdText.text
-            destination.localValuesArray = twoValuesArray
+            destination.rkrdName = twoRkrd.rkrdName
+            destination.localValuesArray = twoRkrd.rkrdValuesArray
         }
     }
 
@@ -71,6 +73,16 @@ class MainRkrdView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let savedRkrds = loadRkrds() {
+            rkrds += savedRkrds
+            if let savedOneRkrd: Rkrd = rkrds[0] {
+                oneRkrd.rkrdName = savedOneRkrd.rkrdName
+                oneRkrd.rkrdValuesArray = savedOneRkrd.rkrdValuesArray
+                if(self.view.accessibilityIdentifier == "mainView") {
+                    doReloadView()
+                }
+            }
+        }
     }
 
     func addRkrd(_ rkrd: String = "") {
@@ -85,52 +97,73 @@ class MainRkrdView: UIViewController {
         addRkrd()
     }
     @IBAction func done_adding(_ sender: Any) {
-        self.view.viewWithTag(1)?.isHidden = true;
+        self.view.viewWithTag(1)?.isHidden = true
+        var isNew: Bool = true
+        for n in rkrds {
+            if (n.rkrdName == rkrdText!.text) {
+                isNew = false
+            }
+        }
         rkrdsArray.append(rkrdText!.text!)
-        if let text = valueText.text {
-            if Double(text) != nil {
-            valuesArray.append(valueText!.text ?? "no value added")
+    
+        if(isNew) {
+            if(self.view.viewWithTag(2)!.isHidden) {
+                oneRkrd.rkrdName = rkrdsArray[rkrdsArray.count-1]
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        oneRkrd.rkrdValuesArray.append(valueText!.text ?? "N/A")
+                    }
+                }
+                oneRkrdText.text = oneRkrd.rkrdName
+                rkrds.append(oneRkrd)
+                self.view.viewWithTag(2)!.isHidden = false
+            }
+            else if(self.view.viewWithTag(3)!.isHidden) {
+                twoRkrd.rkrdName = rkrdsArray[rkrdsArray.count-1]
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        twoRkrd.rkrdValuesArray.append(valueText!.text ?? "N/A")
+                    }
+                }
+                rkrds.append(twoRkrd)
+                twoRkrdText.text = twoRkrd.rkrdName
+                self.view.viewWithTag(3)!.isHidden = false
             }
         }
-        print(valuesArray)
-
-        
-        if(rkrdsArray[rkrdsArray.count-1] == oneRkrdText.text || self.view.viewWithTag(2)!.isHidden) {
-            self.view.bringSubviewToFront(self.view.viewWithTag(2)!)
-            self.view.viewWithTag(2)!.isHidden = false;
-
-            if(valueText.text != "") {
-                if(Double(valuesArray[valuesArray.count-1]) != nil) {
-                    oneValuesArray.append(valuesArray[valuesArray.count-1])
+        if(!isNew) {
+            if(rkrdText.text! == oneRkrd.rkrdName) {
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        oneRkrd.rkrdValuesArray.append(valueText!.text ?? "N/A")
+                    }
                 }
             }
-
-            oneRkrdText.text = rkrdsArray[rkrdsArray.count-1]
-            oneValueText.text = oneValuesArray[oneValuesArray.count-1]
-            
-            oneAverageValue.text = String(calcAverage(oneValuesArray))
-            oneBestValue.text = String(calcHighest(oneValuesArray))
+            if(rkrdText.text! == twoRkrd.rkrdName) {
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        twoRkrd.rkrdValuesArray.append(valueText!.text ?? "N/A")
+                    }
+                }
+            }
         }
-        else if(rkrdsArray[rkrdsArray.count-1] == twoRkrdText.text || self.view.viewWithTag(3)!.isHidden) {
-            self.view.bringSubviewToFront(self.view.viewWithTag(3)!)
-            self.view.viewWithTag(3)!.isHidden = false;
 
-            if(valueText.text != "") {
-                if(Double(valuesArray[valuesArray.count-1]) != nil) {
-                    twoValuesArray.append(valuesArray[valuesArray.count-1])
-                }
-            }
-
-            twoRkrdText.text = rkrdsArray[rkrdsArray.count-1]
-            twoValueText.text = twoValuesArray[twoValuesArray.count-1]
+        if (oneRkrd.rkrdValuesArray.count > 0) {
+            oneValueText.text = String(oneRkrd.rkrdValuesArray[oneRkrd.rkrdValuesArray.count-1])
+            oneAverageValue.text = String(calcAverage(oneRkrd.rkrdValuesArray))
+            oneBestValue.text = String(calcHighest(oneRkrd.rkrdValuesArray))
+        }
             
-            twoAverageValue.text = String(calcAverage(twoValuesArray))
-            twoBestValue.text = String(calcHighest(twoValuesArray))
+        if (twoRkrd.rkrdValuesArray.count > 0) {
+            twoValueText.text = String(twoRkrd.rkrdValuesArray[twoRkrd.rkrdValuesArray.count-1])
+            twoAverageValue.text = String(calcAverage(twoRkrd.rkrdValuesArray))
+            twoBestValue.text = String(calcHighest(twoRkrd.rkrdValuesArray))
         }
         
         rkrdText.text!.removeAll()
         valueText.text!.removeAll()
         self.view.endEditing(true)
+        rkrds = [oneRkrd, twoRkrd]
+        saveRkrds()
     }
     
     func calcAverage(_ valueArray: [String]) -> Double {
@@ -162,6 +195,37 @@ class MainRkrdView: UIViewController {
             
        // Always save state information.
        return true
+    }
+    
+    private func saveRkrds() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(rkrds, toFile: Rkrd.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Rkrds successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save rkrds...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadRkrds() -> [Rkrd]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Rkrd.ArchiveURL.path) as? [Rkrd]
+    }
+    
+    func doReloadView() {
+        if (oneRkrd.rkrdValuesArray.count > 0) {
+            oneRkrdText.text = oneRkrd.rkrdName
+            oneValueText.text = String(oneRkrd.rkrdValuesArray[oneRkrd.rkrdValuesArray.count-1])
+            oneAverageValue.text = String(calcAverage(oneRkrd.rkrdValuesArray))
+            oneBestValue.text = String(calcHighest(oneRkrd.rkrdValuesArray))
+            self.view.viewWithTag(2)!.isHidden = false
+        }
+            
+        if (twoRkrd.rkrdValuesArray.count > 0) {
+            twoRkrdText.text = twoRkrd.rkrdName
+            twoValueText.text = String(twoRkrd.rkrdValuesArray[twoRkrd.rkrdValuesArray.count-1])
+            twoAverageValue.text = String(calcAverage(twoRkrd.rkrdValuesArray))
+            twoBestValue.text = String(calcHighest(twoRkrd.rkrdValuesArray))
+            self.view.viewWithTag(3)!.isHidden = false
+        }
     }
 }
 

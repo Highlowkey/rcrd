@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5B40B419602B13260C5D620B /* Pods_rkrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */; };
 		CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */; };
+		CDB2F9F023633EA9000A7D49 /* Rkrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */; };
 		CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */; };
 		CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59822B95C9F0090A05C /* AppDelegate.swift */; };
 		CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */; };
@@ -40,6 +41,7 @@
 		632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rkrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.debug.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRkrdView.swift; sourceTree = "<group>"; };
+		CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rkrd.swift; sourceTree = "<group>"; };
 		CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59522B95C9F0090A05C /* rkrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rkrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F59822B95C9F0090A05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +91,6 @@
 				A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */,
 				F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 				CDF8F59822B95C9F0090A05C /* AppDelegate.swift */,
 				CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */,
 				CDF8F59C22B95C9F0090A05C /* Main.storyboard */,
+				CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */,
 				CDF8F59F22B95C9F0090A05C /* Assets.xcassets */,
 				CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */,
 				CDF8F5A422B95C9F0090A05C /* Info.plist */,
@@ -335,6 +337,7 @@
 				CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */,
 				CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */,
 				CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */,
+				CDB2F9F023633EA9000A7D49 /* Rkrd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

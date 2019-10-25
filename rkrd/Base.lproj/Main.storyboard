@@ -11,8 +11,8 @@
         <!--Main Rkrd Controller-->
         <scene sceneID="jwC-HN-Ohl">
             <objects>
-                <viewController title="Main Rkrd Controller" modalPresentationStyle="pageSheet" id="7C4-iX-lGN" customClass="MainRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3vQ-fT-HO1">
+                <viewController storyboardIdentifier="MainRkrdView" title="Main Rkrd Controller" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7C4-iX-lGN" customClass="MainRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="parentView" id="3vQ-fT-HO1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -53,17 +53,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="722.5" width="114" height="76.5"/>
+                                <rect key="frame" x="150" y="646" width="114" height="153"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ">
+                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="oneRrkd" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ">
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
@@ -156,17 +156,17 @@
                                     <constraint firstItem="BOZ-IU-GnH" firstAttribute="leading" secondItem="cob-SK-pYQ" secondAttribute="leadingMargin" id="zbq-Wx-pdA"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="MainRkrdView" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-AA-cY4" userLabel="Two View">
+                            <view hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="twoRkrd" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-AA-cY4" userLabel="Two View">
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twoRkrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-S5-l07" userLabel="twoRkrdText">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="twoRkrdText" text="twoRkrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-S5-l07" userLabel="twoRkrdText">
                                         <rect key="frame" x="25.5" y="8" width="150.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -253,7 +253,7 @@
                                     <constraint firstItem="ymg-6A-9mR" firstAttribute="top" secondItem="rJX-Zx-ooh" secondAttribute="bottom" constant="3" id="vW4-UQ-uch"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-wB-tJ8" userLabel="add_rkrd_view">
+                            <view hidden="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="addRkrdView" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-wB-tJ8" userLabel="add_rkrd_view">
                                 <rect key="frame" x="45" y="252" width="324" height="352"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_rkrd_popup" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-xE-pY1">
@@ -325,6 +325,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="mainView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="9hE-gS-HJ3" firstAttribute="leading" secondItem="rlc-VO-rGm" secondAttribute="leading" priority="750" constant="20" id="1gH-Sw-3Nw"/>
                             <constraint firstItem="osN-LF-Cn4" firstAttribute="top" secondItem="3vQ-fT-HO1" secondAttribute="top" id="4vA-dK-Fve"/>
