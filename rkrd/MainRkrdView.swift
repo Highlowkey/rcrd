@@ -84,8 +84,10 @@ class MainRkrdView: UIViewController {
     @IBAction func done_adding(_ sender: Any) {
         self.view.viewWithTag(1)?.isHidden = true;
         rkrdsArray.append(rkrdText!.text!)
-        if(valueText.text != "") {
+        if let text = valueText.text {
+            if Double(text) != nil {
             valuesArray.append(valueText!.text ?? "no value added")
+            }
         }
         print(valuesArray)
 
@@ -95,13 +97,16 @@ class MainRkrdView: UIViewController {
             self.view.viewWithTag(2)!.isHidden = false;
 
             if(valueText.text != "") {
-                oneValuesArray.append(valuesArray[valuesArray.count-1])
+                if(Double(valuesArray[valuesArray.count-1]) != nil) {
+                    oneValuesArray.append(valuesArray[valuesArray.count-1])
+                }
             }
 
             oneRkrdText.text = rkrdsArray[rkrdsArray.count-1]
             oneValueText.text = oneValuesArray[oneValuesArray.count-1]
             var sum: Double = 0
             var average: Double
+            
             for n in oneValuesArray {
                 sum += Double(n)!
             }
