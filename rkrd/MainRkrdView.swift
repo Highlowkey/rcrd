@@ -78,9 +78,13 @@ class MainRkrdView: UIViewController {
             if let savedOneRkrd: Rkrd = rkrds[0] {
                 oneRkrd.rkrdName = savedOneRkrd.rkrdName
                 oneRkrd.rkrdValuesArray = savedOneRkrd.rkrdValuesArray
-                if(self.view.accessibilityIdentifier == "mainView") {
-                    doReloadView()
-                }
+            }
+            if let savedTwoRkrd: Rkrd = rkrds[1] {
+                twoRkrd.rkrdName = savedTwoRkrd.rkrdName
+                twoRkrd.rkrdValuesArray = savedTwoRkrd.rkrdValuesArray
+            }
+            if(self.view.accessibilityIdentifier == "mainView") {
+                doReloadView()
             }
         }
     }
