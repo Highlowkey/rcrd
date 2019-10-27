@@ -15,6 +15,8 @@ class OneRkrdView: MainRkrdView {
     
     @IBOutlet weak var progressChart: LineChartView!
     
+    var numRkrd: Int = 0
+    
     var rkrdName: String?
     
     var localValuesArray: [String] = []
@@ -45,6 +47,16 @@ class OneRkrdView: MainRkrdView {
         
         
         self.progressChart.data = data
+    }
+    
+    @IBAction func deleteRkrd(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! MainRkrdView
+        destination.view.viewWithTag(numRkrd + 2)?.isHidden = true
+        destination.rkrds[numRkrd] = Rkrd("", [])
     }
     
 }

@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="646" width="114" height="153"/>
+                                <rect key="frame" x="150" y="722.5" width="114" height="76.5"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
@@ -160,7 +160,7 @@
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
@@ -433,6 +433,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-ap-Zpk">
+                                <rect key="frame" x="59" y="766" width="296" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Delete Rkrd">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteRkrd:" destination="hXs-pS-ZXo" eventType="touchUpInside" id="SgN-cw-iGd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
