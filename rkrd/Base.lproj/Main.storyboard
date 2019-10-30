@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="722.5" width="114" height="76.5"/>
+                                <rect key="frame" x="150" y="646" width="114" height="153"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
@@ -160,7 +160,7 @@
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
@@ -297,7 +297,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your activity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kft-JO-pGQ">
-                                        <rect key="frame" x="114" y="119" width="94" height="20"/>
+                                        <rect key="frame" x="107" y="119" width="108" height="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -308,11 +308,11 @@
                                     <constraint firstItem="8ek-xE-pY1" firstAttribute="leading" secondItem="Wy9-wB-tJ8" secondAttribute="leading" constant="50" id="7Tv-vr-VFQ"/>
                                     <constraint firstAttribute="trailing" secondItem="8ek-xE-pY1" secondAttribute="trailing" constant="49" id="Lrf-cX-A56"/>
                                     <constraint firstItem="8ek-xE-pY1" firstAttribute="top" secondItem="Zkl-C7-7aq" secondAttribute="bottom" constant="-40" id="MN7-uC-nME"/>
-                                    <constraint firstItem="kft-JO-pGQ" firstAttribute="leading" secondItem="8ek-xE-pY1" secondAttribute="trailing" constant="-161" id="OTv-VX-AYE"/>
+                                    <constraint firstItem="kft-JO-pGQ" firstAttribute="leading" secondItem="8ek-xE-pY1" secondAttribute="trailing" constant="-168" id="OTv-VX-AYE"/>
                                     <constraint firstItem="Xmn-42-Oeo" firstAttribute="bottom" secondItem="8ek-xE-pY1" secondAttribute="bottom" constant="-18" id="Ryc-53-PWJ"/>
                                     <constraint firstItem="Zkl-C7-7aq" firstAttribute="centerX" secondItem="Wy9-wB-tJ8" secondAttribute="centerX" id="TDC-yQ-shC"/>
                                     <constraint firstItem="K40-J5-FZH" firstAttribute="top" secondItem="kft-JO-pGQ" secondAttribute="bottom" constant="15" id="TTw-BV-xrh"/>
-                                    <constraint firstItem="8ek-xE-pY1" firstAttribute="leading" secondItem="kft-JO-pGQ" secondAttribute="trailing" constant="-158" id="W7u-1c-FNc"/>
+                                    <constraint firstItem="8ek-xE-pY1" firstAttribute="leading" secondItem="kft-JO-pGQ" secondAttribute="trailing" constant="-165" id="W7u-1c-FNc"/>
                                     <constraint firstAttribute="bottom" secondItem="8ek-xE-pY1" secondAttribute="bottom" constant="21" id="Xyw-bG-ksI"/>
                                     <constraint firstItem="eao-bU-3Lo" firstAttribute="top" secondItem="K40-J5-FZH" secondAttribute="bottom" constant="4" id="cKi-4P-Zvj"/>
                                     <constraint firstItem="Pxz-fZ-FTu" firstAttribute="top" secondItem="Zkl-C7-7aq" secondAttribute="bottom" constant="9" id="eeC-Z1-llD"/>
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-DT-abR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778.26086956521749" y="123.88392857142857"/>
+            <point key="canvasLocation" x="-742.02898550724649" y="117.85714285714285"/>
         </scene>
         <!--Two Rkrd Controller-->
         <scene sceneID="jF0-wk-LCI">
@@ -430,28 +430,32 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Progress:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-64-wRr">
                                 <rect key="frame" x="41" y="99" width="255" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-ap-Zpk">
-                                <rect key="frame" x="59" y="766" width="296" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqC-ap-Zpk">
+                                <rect key="frame" x="59" y="752" width="296" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="296" id="JWk-KT-l83"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Delete Rkrd">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteRkrd:" destination="hXs-pS-ZXo" eventType="touchUpInside" id="SgN-cw-iGd"/>
+                                    <action selector="deleteSegue:" destination="hXs-pS-ZXo" eventType="touchUpInside" id="dpl-64-Qur"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="gM2-9j-Kps" secondAttribute="trailing" constant="61" id="1OA-KD-1PS"/>
+                            <constraint firstItem="Hgf-me-XhR" firstAttribute="bottom" secondItem="fqC-ap-Zpk" secondAttribute="bottom" constant="26" id="AUf-Dh-Jv0"/>
                             <constraint firstItem="Vw7-Op-kay" firstAttribute="top" secondItem="2y5-64-wRr" secondAttribute="bottom" constant="17" id="CH0-mk-JSY"/>
                             <constraint firstItem="2y5-64-wRr" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="CQf-9N-R6Z"/>
                             <constraint firstItem="gM2-9j-Kps" firstAttribute="top" secondItem="Hgf-me-XhR" secondAttribute="top" constant="20" id="K1g-kl-3sk"/>
                             <constraint firstItem="Vw7-Op-kay" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="NbR-oz-8do"/>
+                            <constraint firstItem="fqC-ap-Zpk" firstAttribute="centerX" secondItem="Hgf-me-XhR" secondAttribute="centerX" id="Wdi-cc-hyn"/>
                             <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="2y5-64-wRr" secondAttribute="trailing" constant="118" id="eNy-If-jPo"/>
                             <constraint firstItem="2y5-64-wRr" firstAttribute="top" secondItem="gM2-9j-Kps" secondAttribute="bottom" constant="28" id="mVX-2x-NeY"/>
                             <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="Vw7-Op-kay" secondAttribute="trailing" constant="40" id="t0e-8b-MGF"/>
@@ -463,9 +467,12 @@
                     <connections>
                         <outlet property="oneRkrdViewText" destination="gM2-9j-Kps" id="Cp6-gQ-k7j"/>
                         <outlet property="progressChart" destination="Vw7-Op-kay" id="4Na-r5-FzA"/>
+                        <segue destination="X0H-9D-K1b" kind="unwind" identifier="1" unwindAction="unwindAfterDeleteWithSegue:" id="HdK-7U-FRX"/>
+                        <segue destination="X0H-9D-K1b" kind="unwind" identifier="2" unwindAction="unwindAfterDeleteWithSegue:" id="exg-Xt-S1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhk-RZ-USB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="X0H-9D-K1b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="228.98550724637684" y="-536.38392857142856"/>
         </scene>

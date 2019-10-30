@@ -20,8 +20,7 @@ class OneRkrdView: MainRkrdView {
     var rkrdName: String?
     
     var localValuesArray: [String] = []
-    
-    
+
     @IBOutlet weak var oneRkrdViewText: UILabel!
     
     override func viewDidLoad() {
@@ -49,14 +48,13 @@ class OneRkrdView: MainRkrdView {
         self.progressChart.data = data
     }
     
-    @IBAction func deleteRkrd(_ sender: Any) {
-        dismiss(animated: true)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! MainRkrdView
-        destination.view.viewWithTag(numRkrd + 2)?.isHidden = true
-        destination.rkrds[numRkrd] = Rkrd("", [])
+    }
+    
+    @IBAction func deleteSegue(_ sender: Any) {
+        let identifier: String = String(numRkrd)
+        performSegue(withIdentifier: identifier, sender: self)
     }
     
 }

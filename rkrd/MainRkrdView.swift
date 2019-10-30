@@ -24,6 +24,8 @@ class MainRkrdView: UIViewController {
     var twoRkrd: Rkrd = Rkrd.init("", [])
     
     var rkrds: [Rkrd] = []
+    
+    var deleted: Bool = false
 
     @IBOutlet weak var oneRkrdText: UILabel!
 
@@ -60,12 +62,12 @@ class MainRkrdView: UIViewController {
         if(segue.identifier == "oneSegue") {
             destination.rkrdName = oneRkrd.rkrdName
             destination.localValuesArray = oneRkrd.rkrdValuesArray
-            destination.numRkrd = 0
+            destination.numRkrd = 1
         }
         if(segue.identifier == "twoSegue") {
             destination.rkrdName = twoRkrd.rkrdName
             destination.localValuesArray = twoRkrd.rkrdValuesArray
-            destination.numRkrd = 0
+            destination.numRkrd = 2
         }
     }
 
@@ -91,6 +93,17 @@ class MainRkrdView: UIViewController {
         }
     }
 
+    @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
+        if(segue.identifier == "1") {
+            rkrds[0] = Rkrd("", [])
+        }
+        if(segue.identifier == "2") {
+            rkrds[1] = Rkrd("", [])
+        }
+        saveRkrds()
+        doReloadView()
+    }
+    
     func addRkrd(_ rkrd: String = "") {
         rkrdText.text = rkrd
         
@@ -102,7 +115,9 @@ class MainRkrdView: UIViewController {
     @IBAction func addRkrdNew(_ sender: Any) {
         addRkrd()
     }
+    
     @IBAction func done_adding(_ sender: Any) {
+        doReloadView()
         self.view.viewWithTag(1)?.isHidden = true
         if(rkrdText!.text != "") {
             var isNew: Bool = true
@@ -183,7 +198,7 @@ class MainRkrdView: UIViewController {
         }
 
         average = sum/Double((valueArray.count))
-        return average
+        return round(average*1000)/1000
     }
     
     func calcHighest(_ valueArray: [String]) -> Double {
@@ -219,12 +234,17 @@ class MainRkrdView: UIViewController {
     }
     
     func doReloadView() {
+        oneRkrd = rkrds[0]
+        twoRkrd = rkrds[1]
         if (oneRkrd.rkrdValuesArray.count > 0) {
             oneRkrdText.text = oneRkrd.rkrdName
             oneValueText.text = String(oneRkrd.rkrdValuesArray[oneRkrd.rkrdValuesArray.count-1])
             oneAverageValue.text = String(calcAverage(oneRkrd.rkrdValuesArray))
             oneBestValue.text = String(calcHighest(oneRkrd.rkrdValuesArray))
             self.view.viewWithTag(2)!.isHidden = false
+        }
+        else {
+            self.view.viewWithTag(2)!.isHidden = true
         }
             
         if (twoRkrd.rkrdValuesArray.count > 0) {
@@ -234,7 +254,11 @@ class MainRkrdView: UIViewController {
             twoBestValue.text = String(calcHighest(twoRkrd.rkrdValuesArray))
             self.view.viewWithTag(3)!.isHidden = false
         }
+        else {
+            self.view.viewWithTag(3)!.isHidden = true
+        }
+        
     }
     
+    
 }
-
