@@ -13,6 +13,8 @@ import os.log
 
 class MainRkrdView: UIViewController {
     
+    //TODO: massively clean up this variable list and add comments
+    
     var rkrdsArray: [String] = []
     
     var isOneRkrd: Bool = false
