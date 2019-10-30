@@ -59,7 +59,7 @@
                                     <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="oneRrkd" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ">
+                            <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="oneRrkd" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ" userLabel="One View">
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
@@ -276,7 +276,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your rkrd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-bU-3Lo">
                                         <rect key="frame" x="124" y="184" width="76" height="20"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K40-J5-FZH">
                                         <rect key="frame" x="138" y="154" width="48" height="26"/>
@@ -366,7 +366,6 @@
                         <outlet property="oneBestValue" destination="6kg-xz-AT8" id="Yn4-Q4-RnV"/>
                         <outlet property="oneRkrdText" destination="7V7-pa-4DD" id="o5R-ET-6DO"/>
                         <outlet property="oneValueText" destination="M52-GW-cnf" id="IBT-kX-qBh"/>
-                        <outlet property="oneView" destination="cob-SK-pYQ" id="u7U-RA-6Yy"/>
                         <outlet property="rkrdText" destination="kft-JO-pGQ" id="cjv-ff-gn6"/>
                         <outlet property="twoAverageValue" destination="Wmb-Sv-6nV" id="xFf-GZ-9Os"/>
                         <outlet property="twoBestValue" destination="ymg-6A-9mR" id="zgy-4C-Asb"/>
