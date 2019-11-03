@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="646" width="114" height="153"/>
+                                <rect key="frame" x="150" y="666" width="114" height="133"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
@@ -122,7 +122,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="jbd-uf-VBw"/>
                                         </constraints>
-                                        <state key="normal" image="add_rkrd"/>
+                                        <state key="normal" image="add_value"/>
                                         <connections>
                                             <action selector="addRkrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="gGm-s5-IPR"/>
                                         </connections>
@@ -219,7 +219,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="hvD-vA-kFS"/>
                                         </constraints>
-                                        <state key="normal" image="add_rkrd"/>
+                                        <state key="normal" image="add_value"/>
                                         <connections>
                                             <action selector="addRkrdTwo:" destination="7C4-iX-lGN" eventType="touchUpInside" id="SKJ-Oc-5RT"/>
                                         </connections>
@@ -477,8 +477,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_rkrd" width="68.666664123535156" height="76.666664123535156"/>
+        <image name="add_rkrd" width="66.666664123535156" height="66.666664123535156"/>
         <image name="add_rkrd_popup" width="164" height="209"/>
+        <image name="add_value" width="45.333332061767578" height="45.333332061767578"/>
         <image name="bottom_rect" width="1125" height="2437"/>
         <image name="done" width="220" height="60"/>
         <image name="rkrd_background" width="859" height="1243"/>

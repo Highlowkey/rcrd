@@ -79,7 +79,6 @@ class MainRkrdView: UIViewController {
     //updating rkrds after adding
     
     @IBAction func done_adding(_ sender: Any) {
-        doReloadView()
         self.view.viewWithTag(1)?.isHidden = true
         if(rkrdText!.text != "") {
             var isNew: Bool = true
@@ -97,7 +96,6 @@ class MainRkrdView: UIViewController {
                         if Double(text) != nil {
                             rkrds[0].rkrdValuesArray.append(valueText!.text!)
                         }
-                        rkrds[0].rkrdValuesArray.append("0")
                     }
                     oneRkrdText.text = rkrds[0].rkrdName
                     self.view.viewWithTag(2)!.isHidden = false
@@ -110,7 +108,6 @@ class MainRkrdView: UIViewController {
                         }
                     }
                     twoRkrdText.text = rkrds[1].rkrdName
-                    rkrds[1].rkrdValuesArray.append("0")
                     self.view.viewWithTag(3)!.isHidden = false
                 }
             }
@@ -118,14 +115,14 @@ class MainRkrdView: UIViewController {
                 if(rkrdText.text! == rkrds[0].rkrdName) {
                     if let text = valueText.text {
                         if Double(text) != nil {
-                            rkrds[0].rkrdValuesArray.append(valueText!.text ?? "N/A")
+                            rkrds[0].rkrdValuesArray.append(valueText!.text!)
                         }
                     }
                 }
                 if(rkrdText.text! == rkrds[1].rkrdName) {
                     if let text = valueText.text {
                         if Double(text) != nil {
-                            rkrds[1].rkrdValuesArray.append(valueText!.text ?? "N/A")
+                            rkrds[1].rkrdValuesArray.append(valueText!.text!)
                         }
                     }
                 }
@@ -136,17 +133,28 @@ class MainRkrdView: UIViewController {
                 oneAverageValue.text = String(calcAverage(rkrds[0].rkrdValuesArray))
                 oneBestValue.text = String(calcHighest(rkrds[0].rkrdValuesArray))
             }
+            else {
+                oneValueText.text = ""
+                oneAverageValue.text = ""
+                oneBestValue.text = ""
+            }
                 
             if (rkrds[1].rkrdValuesArray.count > 0) {
                 twoValueText.text = String(rkrds[1].rkrdValuesArray[rkrds[1].rkrdValuesArray.count-1])
                 twoAverageValue.text = String(calcAverage(rkrds[1].rkrdValuesArray))
                 twoBestValue.text = String(calcHighest(rkrds[1].rkrdValuesArray))
             }
+            else {
+                twoValueText.text = ""
+                twoAverageValue.text = ""
+                twoBestValue.text = ""
+            }
             
             rkrdText.text!.removeAll()
             valueText.text!.removeAll()
             self.view.endEditing(true)
             saveRkrds()
+            doReloadView()
         }
     }
     
@@ -191,9 +199,15 @@ class MainRkrdView: UIViewController {
     @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
         if(segue.identifier == "1") {
             rkrds[0] = Rkrd("", [])
+            oneValueText.text = ""
+            oneAverageValue.text = ""
+            oneBestValue.text = ""
         }
         if(segue.identifier == "2") {
             rkrds[1] = Rkrd("", [])
+            twoValueText.text = ""
+            twoAverageValue.text = ""
+            twoBestValue.text = ""
         }
         saveRkrds()
         doReloadView()
@@ -232,22 +246,26 @@ class MainRkrdView: UIViewController {
     //view reloading after delete or re-launch
     
     func doReloadView() {
-        if (rkrds[0].rkrdValuesArray.count > 0) {
+        if (rkrds[0].rkrdName != "") {
             oneRkrdText.text = rkrds[0].rkrdName
-            oneValueText.text = String(rkrds[0].rkrdValuesArray[rkrds[0].rkrdValuesArray.count-1])
-            oneAverageValue.text = String(calcAverage(rkrds[0].rkrdValuesArray))
-            oneBestValue.text = String(calcHighest(rkrds[0].rkrdValuesArray))
+            if (rkrds[0].rkrdValuesArray.count > 0) {
+                oneValueText.text = String(rkrds[0].rkrdValuesArray[rkrds[0].rkrdValuesArray.count-1])
+                oneAverageValue.text = String(calcAverage(rkrds[0].rkrdValuesArray))
+                oneBestValue.text = String(calcHighest(rkrds[0].rkrdValuesArray))
+            }
             self.view.viewWithTag(2)!.isHidden = false
         }
         else {
             self.view.viewWithTag(2)!.isHidden = true
         }
             
-        if (rkrds[1].rkrdValuesArray.count > 0) {
+        if (rkrds[1].rkrdName != "") {
             twoRkrdText.text = rkrds[1].rkrdName
-            twoValueText.text = String(rkrds[1].rkrdValuesArray[rkrds[1].rkrdValuesArray.count-1])
-            twoAverageValue.text = String(calcAverage(rkrds[1].rkrdValuesArray))
-            twoBestValue.text = String(calcHighest(rkrds[1].rkrdValuesArray))
+            if (rkrds[1].rkrdValuesArray.count > 0) {
+                twoValueText.text = String(rkrds[1].rkrdValuesArray[rkrds[1].rkrdValuesArray.count-1])
+                twoAverageValue.text = String(calcAverage(rkrds[1].rkrdValuesArray))
+                twoBestValue.text = String(calcHighest(rkrds[1].rkrdValuesArray))
+            }
             self.view.viewWithTag(3)!.isHidden = false
         }
         else {
