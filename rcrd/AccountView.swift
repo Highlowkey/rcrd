@@ -1,6 +1,6 @@
 //
-//  TwoRkrdView.swift
-//  rkrd
+//  AccountView.swift
+//  rcrd
 //
 //  Created by Patrick McElroy on 10/16/19.
 //  Copyright © 2019 Patrick McElroy. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TwoRkrdView: UIViewController {
+class AccountView: UIViewController {
     
     
     override func viewDidLoad() {

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  rkrd
+//  rcrd
 //
 //  Created by Patrick McElroy on 6/18/19.
 //  Copyright © 2019 Patrick McElroy. All rights reserved.

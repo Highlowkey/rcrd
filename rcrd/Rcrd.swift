@@ -1,6 +1,6 @@
 //
 //  Rkrd.swift
-//  rkrd
+//  rcrd
 //
 //  Created by Patrick McElroy on 10/25/19.
 //  Copyright © 2019 Patrick McElroy. All rights reserved.
@@ -8,19 +8,19 @@
 import Foundation
 import os.log
 
-class Rkrd: NSObject, NSCoding {
+class Rcrd: NSObject, NSCoding {
     
-    var rkrdName: String
-    var rkrdValuesArray: [String] = []
+    var rcrdName: String
+    var rcrdValuesArray: [String] = []
     
     init(_ nameIn: String,_ arrayIn: [String]) {
-        rkrdName = nameIn
-        rkrdValuesArray = arrayIn
+        rcrdName = nameIn
+        rcrdValuesArray = arrayIn
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(rkrdName, forKey: "name")
-        aCoder.encode(rkrdValuesArray, forKey: "values")
+        aCoder.encode(rcrdName, forKey: "name")
+        aCoder.encode(rcrdValuesArray, forKey: "values")
     }
     
     required convenience init?(coder: NSCoder) {
@@ -31,7 +31,7 @@ class Rkrd: NSObject, NSCoding {
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("rkrds")
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("rcrds")
     
 
 }

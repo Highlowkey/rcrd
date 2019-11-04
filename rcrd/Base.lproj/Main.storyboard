@@ -11,7 +11,7 @@
         <!--Main Rkrd Controller-->
         <scene sceneID="jwC-HN-Ohl">
             <objects>
-                <viewController storyboardIdentifier="MainRkrdView" title="Main Rkrd Controller" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7C4-iX-lGN" customClass="MainRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" title="Main Rkrd Controller" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7C4-iX-lGN" customClass="MainView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="parentView" id="3vQ-fT-HO1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="150" y="666" width="114" height="133"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
-                                    <action selector="addRkrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="LI8-Sy-oWT"/>
+                                    <action selector="addRcrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="wPP-fa-eEk"/>
                                 </connections>
                             </button>
                             <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="oneRrkd" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ" userLabel="One View">
@@ -69,8 +69,8 @@
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oneRkrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V7-pa-4DD">
-                                        <rect key="frame" x="24.5" y="8" width="152.5" height="36"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oneRcrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V7-pa-4DD">
+                                        <rect key="frame" x="24" y="8" width="153" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB2-YJ-Cnt">
-                                        <rect key="frame" x="67.5" y="94" width="66.5" height="21"/>
+                                        <rect key="frame" x="67" y="94" width="67" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oneBestValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-xz-AT8">
-                                        <rect key="frame" x="53.5" y="165" width="94.5" height="17"/>
+                                        <rect key="frame" x="53" y="165" width="95" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                                         </constraints>
                                         <state key="normal" image="add_value"/>
                                         <connections>
-                                            <action selector="addRkrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="gGm-s5-IPR"/>
+                                            <action selector="addRcrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="Oc6-9z-1oN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -166,8 +166,8 @@
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="twoRkrdText" text="twoRkrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-S5-l07" userLabel="twoRkrdText">
-                                        <rect key="frame" x="25.5" y="8" width="150.5" height="36"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="twoRkrdText" text="twoRcrdText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-S5-l07" userLabel="twoRkrdText">
+                                        <rect key="frame" x="25" y="8" width="151" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq8-d4-dBV">
-                                        <rect key="frame" x="67.5" y="94" width="66.5" height="21"/>
+                                        <rect key="frame" x="67" y="94" width="67" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                                         </constraints>
                                         <state key="normal" image="add_value"/>
                                         <connections>
-                                            <action selector="addRkrdTwo:" destination="7C4-iX-lGN" eventType="touchUpInside" id="SKJ-Oc-5RT"/>
+                                            <action selector="addRcrdTwo:" destination="7C4-iX-lGN" eventType="touchUpInside" id="e1h-Zw-Dza"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -273,7 +273,7 @@
                                             <action selector="done_adding:" destination="7C4-iX-lGN" eventType="touchUpInside" id="hDX-O6-9Z8"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your rkrd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-bU-3Lo">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your rcrd" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eao-bU-3Lo">
                                         <rect key="frame" x="124" y="184" width="76" height="20"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -364,12 +364,12 @@
                     <connections>
                         <outlet property="oneAverageValue" destination="tf5-ia-87h" id="Agk-oN-mPC"/>
                         <outlet property="oneBestValue" destination="6kg-xz-AT8" id="Yn4-Q4-RnV"/>
-                        <outlet property="oneRkrdText" destination="7V7-pa-4DD" id="o5R-ET-6DO"/>
+                        <outlet property="oneRcrdText" destination="7V7-pa-4DD" id="Cqg-QD-INr"/>
                         <outlet property="oneValueText" destination="M52-GW-cnf" id="IBT-kX-qBh"/>
-                        <outlet property="rkrdText" destination="kft-JO-pGQ" id="cjv-ff-gn6"/>
+                        <outlet property="rcrdText" destination="kft-JO-pGQ" id="SuP-6K-A7R"/>
                         <outlet property="twoAverageValue" destination="Wmb-Sv-6nV" id="xFf-GZ-9Os"/>
                         <outlet property="twoBestValue" destination="ymg-6A-9mR" id="zgy-4C-Asb"/>
-                        <outlet property="twoRkrdText" destination="2BI-S5-l07" id="1zf-jC-QOb"/>
+                        <outlet property="twoRcrdText" destination="2BI-S5-l07" id="nte-8q-IFF"/>
                         <outlet property="twoValueText" destination="ATs-3N-i9h" id="Gnm-EA-sxG"/>
                         <outlet property="valueText" destination="eao-bU-3Lo" id="THf-Ib-M4h"/>
                         <segue destination="BBw-KK-QMC" kind="show" identifier="twoSegue" id="iEL-gi-5g9"/>
@@ -382,7 +382,7 @@
         <!--Two Rkrd Controller-->
         <scene sceneID="jF0-wk-LCI">
             <objects>
-                <viewController title="Two Rkrd Controller" id="BBw-KK-QMC" customClass="TwoRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Two Rkrd Controller" id="BBw-KK-QMC" customClass="AccountView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C4f-SU-bRU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,10 +405,10 @@
             </objects>
             <point key="canvasLocation" x="223.18840579710147" y="117.85714285714285"/>
         </scene>
-        <!--One Rkrd View-->
+        <!--Rcrd View-->
         <scene sceneID="P7y-6Q-Spw">
             <objects>
-                <viewController id="hXs-pS-ZXo" customClass="OneRkrdView" customModule="rkrd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hXs-pS-ZXo" customClass="RcrdView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fah-3P-QtP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,7 +464,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QPK-eI-u8n"/>
                     <connections>
-                        <outlet property="oneRkrdViewText" destination="gM2-9j-Kps" id="Cp6-gQ-k7j"/>
+                        <outlet property="oneRcrdViewText" destination="gM2-9j-Kps" id="VP1-pj-NMX"/>
                         <outlet property="progressChart" destination="Vw7-Op-kay" id="4Na-r5-FzA"/>
                         <segue destination="X0H-9D-K1b" kind="unwind" identifier="1" unwindAction="unwindAfterDeleteWithSegue:" id="HdK-7U-FRX"/>
                         <segue destination="X0H-9D-K1b" kind="unwind" identifier="2" unwindAction="unwindAfterDeleteWithSegue:" id="exg-Xt-S1n"/>

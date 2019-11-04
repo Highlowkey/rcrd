@@ -1,6 +1,6 @@
 //
-//  OneRkrdView.swift
-//  rkrd
+//  RcrdView.swift
+//  rcrd
 //
 //  Created by Patrick McElroy on 10/21/19.
 //  Copyright © 2019 Patrick McElroy. All rights reserved.
@@ -11,21 +11,21 @@ import UIKit
 import Charts
 
 
-class OneRkrdView: MainRkrdView {
+class RcrdView: MainView {
     
     @IBOutlet weak var progressChart: LineChartView!
     
-    var numRkrd: Int = 0
+    var numRcrd: Int = 0
     
-    var rkrdName: String?
+    var rcrdName: String?
     
     var localValuesArray: [String] = []
 
-    @IBOutlet weak var oneRkrdViewText: UILabel!
+    @IBOutlet weak var oneRcrdViewText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        oneRkrdViewText.text = rkrdName
+        oneRcrdViewText.text = rcrdName
         setChartValues(localValuesArray.count)
         // Do any additional setup after loading the view.
     }
@@ -36,7 +36,7 @@ class OneRkrdView: MainRkrdView {
             return ChartDataEntry(x: Double(i), y: val)
         }
         
-        let set1 = LineChartDataSet(values: values, label: rkrdName)
+        let set1 = LineChartDataSet(values: values, label: rcrdName)
         let data = LineChartData(dataSet: set1)
         
         set1.colors = [NSUIColor.black]
@@ -53,7 +53,7 @@ class OneRkrdView: MainRkrdView {
     }
     
     @IBAction func deleteSegue(_ sender: Any) {
-        let identifier: String = String(numRkrd)
+        let identifier: String = String(numRcrd)
         performSegue(withIdentifier: identifier, sender: self)
     }
     

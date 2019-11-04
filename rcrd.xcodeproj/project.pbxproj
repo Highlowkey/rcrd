@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B40B419602B13260C5D620B /* Pods_rkrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */; };
-		CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */; };
-		CDB2F9F023633EA9000A7D49 /* Rkrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */; };
-		CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */; };
+		922D146AF5A9F81EFFE0577F /* Pods_rcrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68482C560EB504F62E68E812 /* Pods_rcrd.framework */; };
+		CD5B3DFF236F949200B61356 /* Rcrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFC236F949200B61356 /* Rcrd.swift */; };
+		CD5B3E00236F949200B61356 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFD236F949200B61356 /* AccountView.swift */; };
+		CD5B3E01236F949200B61356 /* RcrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFE236F949200B61356 /* RcrdView.swift */; };
+		CD5B3E03236F94A000B61356 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3E02236F94A000B61356 /* MainView.swift */; };
 		CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59822B95C9F0090A05C /* AppDelegate.swift */; };
-		CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */; };
 		CDF8F59E22B95C9F0090A05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F59C22B95C9F0090A05C /* Main.storyboard */; };
 		CDF8F5A022B95C9F0090A05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F59F22B95C9F0090A05C /* Assets.xcassets */; };
 		CDF8F5A322B95C9F0090A05C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */; };
@@ -38,24 +38,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rkrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DDDBF268B9B0349EE18F482 /* Pods-rcrd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rcrd.release.xcconfig"; path = "Target Support Files/Pods-rcrd/Pods-rcrd.release.xcconfig"; sourceTree = "<group>"; };
+		68482C560EB504F62E68E812 /* Pods_rcrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rcrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.debug.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.debug.xcconfig"; sourceTree = "<group>"; };
-		CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRkrdView.swift; sourceTree = "<group>"; };
-		CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rkrd.swift; sourceTree = "<group>"; };
-		CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRkrdView.swift; sourceTree = "<group>"; };
-		CDF8F59522B95C9F0090A05C /* rkrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rkrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5B3DFC236F949200B61356 /* Rcrd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rcrd.swift; sourceTree = "<group>"; };
+		CD5B3DFD236F949200B61356 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		CD5B3DFE236F949200B61356 /* RcrdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RcrdView.swift; path = /Users/Patrick/Documents/Projects/rcrd/rcrd/rcrd/RcrdView.swift; sourceTree = "<absolute>"; };
+		CD5B3E02236F94A000B61356 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = /Users/Patrick/Documents/Projects/rcrd/rcrd/rcrd/MainView.swift; sourceTree = "<absolute>"; };
+		CDF8F59522B95C9F0090A05C /* rcrd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rcrd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F59822B95C9F0090A05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRkrdView.swift; sourceTree = "<group>"; };
 		CDF8F59D22B95C9F0090A05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDF8F59F22B95C9F0090A05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF8F5A222B95C9F0090A05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CDF8F5A422B95C9F0090A05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDF8F5A922B95C9F0090A05C /* rkrdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rkrdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDF8F5A422B95C9F0090A05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/Patrick/Documents/Projects/rcrd/rcrd/rcrd/Info.plist; sourceTree = "<absolute>"; };
+		CDF8F5A922B95C9F0090A05C /* rcrdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rcrdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F5AD22B95C9F0090A05C /* rkrdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rkrdTests.swift; sourceTree = "<group>"; };
 		CDF8F5AF22B95C9F0090A05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDF8F5B422B95C9F0090A05C /* rkrdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rkrdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDF8F5B422B95C9F0090A05C /* rcrdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rcrdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F5B822B95C9F0090A05C /* rkrdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rkrdUITests.swift; sourceTree = "<group>"; };
 		CDF8F5BA22B95C9F0090A05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E16C342BCEEF566E1E5304 /* Pods-rcrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rcrd.debug.xcconfig"; path = "Target Support Files/Pods-rcrd/Pods-rcrd.debug.xcconfig"; sourceTree = "<group>"; };
 		F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.release.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B40B419602B13260C5D620B /* Pods_rkrd.framework in Frameworks */,
+				922D146AF5A9F81EFFE0577F /* Pods_rcrd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +92,8 @@
 			children = (
 				A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */,
 				F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */,
+				E0E16C342BCEEF566E1E5304 /* Pods-rcrd.debug.xcconfig */,
+				2DDDBF268B9B0349EE18F482 /* Pods-rcrd.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -97,7 +101,7 @@
 		CDF8F58C22B95C9E0090A05C = {
 			isa = PBXGroup;
 			children = (
-				CDF8F59722B95C9F0090A05C /* rkrd */,
+				CDF8F59722B95C9F0090A05C /* rcrd */,
 				CDF8F5AC22B95C9F0090A05C /* rkrdTests */,
 				CDF8F5B722B95C9F0090A05C /* rkrdUITests */,
 				CDF8F59622B95C9F0090A05C /* Products */,
@@ -109,27 +113,27 @@
 		CDF8F59622B95C9F0090A05C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDF8F59522B95C9F0090A05C /* rkrd.app */,
-				CDF8F5A922B95C9F0090A05C /* rkrdTests.xctest */,
-				CDF8F5B422B95C9F0090A05C /* rkrdUITests.xctest */,
+				CDF8F59522B95C9F0090A05C /* rcrd.app */,
+				CDF8F5A922B95C9F0090A05C /* rcrdTests.xctest */,
+				CDF8F5B422B95C9F0090A05C /* rcrdUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDF8F59722B95C9F0090A05C /* rkrd */ = {
+		CDF8F59722B95C9F0090A05C /* rcrd */ = {
 			isa = PBXGroup;
 			children = (
-				CDF5B24B2357F2730028A3C8 /* TwoRkrdView.swift */,
 				CDF8F59822B95C9F0090A05C /* AppDelegate.swift */,
-				CDF8F59A22B95C9F0090A05C /* MainRkrdView.swift */,
+				CD5B3E02236F94A000B61356 /* MainView.swift */,
 				CDF8F59C22B95C9F0090A05C /* Main.storyboard */,
-				CDB2F9EF23633EA9000A7D49 /* Rkrd.swift */,
+				CD5B3DFD236F949200B61356 /* AccountView.swift */,
+				CD5B3DFC236F949200B61356 /* Rcrd.swift */,
+				CD5B3DFE236F949200B61356 /* RcrdView.swift */,
 				CDF8F59F22B95C9F0090A05C /* Assets.xcassets */,
 				CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */,
 				CDF8F5A422B95C9F0090A05C /* Info.plist */,
-				CD76C195235E8C57002DFBC8 /* OneRkrdView.swift */,
 			);
-			path = rkrd;
+			path = rcrd;
 			sourceTree = "<group>";
 		};
 		CDF8F5AC22B95C9F0090A05C /* rkrdTests */ = {
@@ -153,7 +157,7 @@
 		D40A360ED78EF78DA629D452 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				632A821C6C9A45AB1B769428 /* Pods_rkrd.framework */,
+				68482C560EB504F62E68E812 /* Pods_rcrd.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDF8F59422B95C9E0090A05C /* rkrd */ = {
+		CDF8F59422B95C9E0090A05C /* rcrd */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDF8F5BD22B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrd" */;
+			buildConfigurationList = CDF8F5BD22B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrd" */;
 			buildPhases = (
 				68E614EF7995D95CF3B39BA0 /* [CP] Check Pods Manifest.lock */,
 				CDF8F59122B95C9E0090A05C /* Sources */,
@@ -175,14 +179,14 @@
 			);
 			dependencies = (
 			);
-			name = rkrd;
+			name = rcrd;
 			productName = rkrd;
-			productReference = CDF8F59522B95C9F0090A05C /* rkrd.app */;
+			productReference = CDF8F59522B95C9F0090A05C /* rcrd.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CDF8F5A822B95C9F0090A05C /* rkrdTests */ = {
+		CDF8F5A822B95C9F0090A05C /* rcrdTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDF8F5C022B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrdTests" */;
+			buildConfigurationList = CDF8F5C022B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrdTests" */;
 			buildPhases = (
 				CDF8F5A522B95C9F0090A05C /* Sources */,
 				CDF8F5A622B95C9F0090A05C /* Frameworks */,
@@ -193,14 +197,14 @@
 			dependencies = (
 				CDF8F5AB22B95C9F0090A05C /* PBXTargetDependency */,
 			);
-			name = rkrdTests;
+			name = rcrdTests;
 			productName = rkrdTests;
-			productReference = CDF8F5A922B95C9F0090A05C /* rkrdTests.xctest */;
+			productReference = CDF8F5A922B95C9F0090A05C /* rcrdTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CDF8F5B322B95C9F0090A05C /* rkrdUITests */ = {
+		CDF8F5B322B95C9F0090A05C /* rcrdUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDF8F5C322B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrdUITests" */;
+			buildConfigurationList = CDF8F5C322B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrdUITests" */;
 			buildPhases = (
 				CDF8F5B022B95C9F0090A05C /* Sources */,
 				CDF8F5B122B95C9F0090A05C /* Frameworks */,
@@ -211,9 +215,9 @@
 			dependencies = (
 				CDF8F5B622B95C9F0090A05C /* PBXTargetDependency */,
 			);
-			name = rkrdUITests;
+			name = rcrdUITests;
 			productName = rkrdUITests;
-			productReference = CDF8F5B422B95C9F0090A05C /* rkrdUITests.xctest */;
+			productReference = CDF8F5B422B95C9F0090A05C /* rcrdUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CDF8F59022B95C9E0090A05C /* Build configuration list for PBXProject "rkrd" */;
+			buildConfigurationList = CDF8F59022B95C9E0090A05C /* Build configuration list for PBXProject "rcrd" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,9 +256,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDF8F59422B95C9E0090A05C /* rkrd */,
-				CDF8F5A822B95C9F0090A05C /* rkrdTests */,
-				CDF8F5B322B95C9F0090A05C /* rkrdUITests */,
+				CDF8F59422B95C9E0090A05C /* rcrd */,
+				CDF8F5A822B95C9F0090A05C /* rcrdTests */,
+				CDF8F5B322B95C9F0090A05C /* rcrdUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,7 +306,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rkrd-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-rcrd-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -315,15 +319,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-rcrd/Pods-rcrd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-rcrd/Pods-rcrd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rkrd/Pods-rkrd-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rcrd/Pods-rcrd-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -333,11 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF5B24C2357F2730028A3C8 /* TwoRkrdView.swift in Sources */,
-				CD76C196235E8C57002DFBC8 /* OneRkrdView.swift in Sources */,
-				CDF8F59B22B95C9F0090A05C /* MainRkrdView.swift in Sources */,
+				CD5B3E00236F949200B61356 /* AccountView.swift in Sources */,
+				CD5B3DFF236F949200B61356 /* Rcrd.swift in Sources */,
 				CDF8F59922B95C9F0090A05C /* AppDelegate.swift in Sources */,
-				CDB2F9F023633EA9000A7D49 /* Rkrd.swift in Sources */,
+				CD5B3E03236F94A000B61356 /* MainView.swift in Sources */,
+				CD5B3E01236F949200B61356 /* RcrdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,12 +366,12 @@
 /* Begin PBXTargetDependency section */
 		CDF8F5AB22B95C9F0090A05C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CDF8F59422B95C9E0090A05C /* rkrd */;
+			target = CDF8F59422B95C9E0090A05C /* rcrd */;
 			targetProxy = CDF8F5AA22B95C9F0090A05C /* PBXContainerItemProxy */;
 		};
 		CDF8F5B622B95C9F0090A05C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CDF8F59422B95C9E0090A05C /* rkrd */;
+			target = CDF8F59422B95C9E0090A05C /* rcrd */;
 			targetProxy = CDF8F5B522B95C9F0090A05C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -510,17 +514,17 @@
 		};
 		CDF8F5BE22B95C9F0090A05C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */;
+			baseConfigurationReference = E0E16C342BCEEF566E1E5304 /* Pods-rcrd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VNF32BC38;
-				INFOPLIST_FILE = rkrd/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/rcrd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = None.rkrd;
+				PRODUCT_BUNDLE_IDENTIFIER = None.rcrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,17 +533,17 @@
 		};
 		CDF8F5BF22B95C9F0090A05C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5DBEEF289968C35B72375C1 /* Pods-rkrd.release.xcconfig */;
+			baseConfigurationReference = 2DDDBF268B9B0349EE18F482 /* Pods-rcrd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VNF32BC38;
-				INFOPLIST_FILE = rkrd/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/rcrd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = None.rkrd;
+				PRODUCT_BUNDLE_IDENTIFIER = None.rcrd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -563,7 +567,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rkrd.app/rkrd";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rcrd.app/rcrd";
 			};
 			name = Debug;
 		};
@@ -584,7 +588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rkrd.app/rkrd";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rcrd.app/rcrd";
 			};
 			name = Release;
 		};
@@ -631,7 +635,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDF8F59022B95C9E0090A05C /* Build configuration list for PBXProject "rkrd" */ = {
+		CDF8F59022B95C9E0090A05C /* Build configuration list for PBXProject "rcrd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDF8F5BB22B95C9F0090A05C /* Debug */,
@@ -640,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDF8F5BD22B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrd" */ = {
+		CDF8F5BD22B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDF8F5BE22B95C9F0090A05C /* Debug */,
@@ -649,7 +653,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDF8F5C022B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrdTests" */ = {
+		CDF8F5C022B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrdTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDF8F5C122B95C9F0090A05C /* Debug */,
@@ -658,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDF8F5C322B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rkrdUITests" */ = {
+		CDF8F5C322B95C9F0090A05C /* Build configuration list for PBXNativeTarget "rcrdUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDF8F5C422B95C9F0090A05C /* Debug */,
