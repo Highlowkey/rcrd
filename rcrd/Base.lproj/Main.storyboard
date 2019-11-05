@@ -323,6 +323,17 @@
                                     <constraint firstAttribute="trailing" secondItem="Xmn-42-Oeo" secondAttribute="trailing" constant="78" id="yjR-g3-3RU"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prn-DJ-HIs">
+                                <rect key="frame" x="53" y="773" width="51" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="77l-ZU-P6Y"/>
+                                    <constraint firstAttribute="width" constant="51" id="xnV-Xb-PFo"/>
+                                </constraints>
+                                <state key="normal" image="list_segue"/>
+                                <connections>
+                                    <segue destination="wGZ-8Y-brj" kind="show" identifier="listSegue" id="QZw-Dj-QBH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration" identifier="mainView">
@@ -351,6 +362,8 @@
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="IfL-3Y-PMN" secondAttribute="trailing" constant="-3" id="cB0-MX-B8k"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="bottom" secondItem="o3c-iB-1j9" secondAttribute="bottom" constant="63" id="fp4-Db-XWv"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="yzp-qU-r9O" secondAttribute="trailing" constant="137" id="gy7-jb-Cw2"/>
+                            <constraint firstItem="IfL-3Y-PMN" firstAttribute="leading" secondItem="prn-DJ-HIs" secondAttribute="leading" constant="-55" id="l3X-9w-931"/>
+                            <constraint firstItem="IfL-3Y-PMN" firstAttribute="top" secondItem="prn-DJ-HIs" secondAttribute="top" constant="-9" id="lXf-JY-1i8"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="bottom" secondItem="Wy9-wB-tJ8" secondAttribute="bottom" constant="258" id="lzE-2C-hzT"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="Wy9-wB-tJ8" secondAttribute="trailing" constant="45" id="mcK-ay-i0z"/>
                             <constraint firstItem="z4R-Ld-ebw" firstAttribute="top" secondItem="osN-LF-Cn4" secondAttribute="bottom" constant="13" id="u7C-ai-GWK"/>
@@ -359,11 +372,6 @@
                             <constraint firstItem="IfL-3Y-PMN" firstAttribute="bottom" secondItem="rlc-VO-rGm" secondAttribute="bottom" constant="34" id="vxe-LI-lt8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rlc-VO-rGm"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Wy9-wB-tJ8"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="T5A-Rx-qiN"/>
                     <userDefinedRuntimeAttributes>
@@ -412,6 +420,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-01-Zvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.18840579710147" y="117.85714285714285"/>
+        </scene>
+        <!--Rcrd List-->
+        <scene sceneID="Bfc-cT-0k0">
+            <objects>
+                <tableViewController id="wGZ-8Y-brj" customClass="RcrdList" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xGf-2i-Rp6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rcrdCell" id="ax6-hi-uff">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ax6-hi-uff" id="ml9-fz-aUu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wGZ-8Y-brj" id="Oq7-le-OJP"/>
+                            <outlet property="delegate" destination="wGZ-8Y-brj" id="ogq-4q-TaI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ONI-Zu-NnD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdh-TY-qtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="808"/>
         </scene>
         <!--Rcrd View-->
         <scene sceneID="P7y-6Q-Spw">
@@ -490,6 +531,7 @@
         <image name="add_value" width="45.333332061767578" height="45.333332061767578"/>
         <image name="bottom_rect" width="1125" height="2437"/>
         <image name="done" width="220" height="60"/>
+        <image name="list_segue" width="179" height="145"/>
         <image name="rkrd_background" width="859" height="1243"/>
         <image name="rkrd_logo" width="285" height="112"/>
         <image name="settings_logo" width="126" height="126"/>

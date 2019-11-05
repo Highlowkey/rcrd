@@ -37,7 +37,10 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rcrds = [Rcrd("", []), Rcrd("", [])]
+        saveRcrds()
         if let savedRcrds = loadRcrds() {
+            rcrds.removeAll()
             rcrds += savedRcrds
             if let savedOneRcrd: Rcrd = rcrds[0] {
                 rcrds[0].rcrdName = savedOneRcrd.rcrdName
@@ -183,16 +186,23 @@ class MainView: UIViewController {
     //rcrdView segue management
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! RcrdView
         if(segue.identifier == "oneSegue") {
+            let destination = segue.destination as! RcrdView
             destination.rcrdName = rcrds[0].rcrdName
             destination.localValuesArray = rcrds[0].rcrdValuesArray
             destination.numRcrd = 1
         }
         if(segue.identifier == "twoSegue") {
+            let destination = segue.destination as! RcrdView
             destination.rcrdName = rcrds[1].rcrdName
             destination.localValuesArray = rcrds[1].rcrdValuesArray
             destination.numRcrd = 2
+        }
+        if(segue.identifier == "listSegue") {
+            let destination = segue.destination as! RcrdList
+            for n in rcrds {
+                destination.allRcrds.append(n)
+            }
         }
     }
     

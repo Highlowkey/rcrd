@@ -11,7 +11,7 @@ import UIKit
 import Charts
 
 
-class RcrdView: MainView {
+class RcrdView: UIViewController {
     
     @IBOutlet weak var progressChart: LineChartView!
     
