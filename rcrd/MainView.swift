@@ -47,7 +47,7 @@ class MainView: UIViewController {
                 rcrds[1].rcrdName = savedTwoRcrd.rcrdName
                 rcrds[1].rcrdValuesArray = savedTwoRcrd.rcrdValuesArray
             }
-            if(self.view.accessibilityIdentifier == "mainView") {
+            if(self.restorationIdentifier == "MainView") {
                 doReloadView()
             }
         }
