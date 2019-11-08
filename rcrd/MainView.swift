@@ -37,8 +37,6 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rcrds = [Rcrd("", []), Rcrd("", [])]
-        saveRcrds()
         if let savedRcrds = loadRcrds() {
             rcrds.removeAll()
             rcrds += savedRcrds

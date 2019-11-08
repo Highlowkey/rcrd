@@ -17,8 +17,4 @@ class AccountView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func twoSegueBack(_ sender: Any) {
-        dismiss(animated: true)
-    }
 }
