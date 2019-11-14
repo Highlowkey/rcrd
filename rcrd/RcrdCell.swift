@@ -14,11 +14,13 @@ import os.log
 class RcrdCell: UITableViewCell {
     
     var rcrd: Rcrd = Rcrd("", [])
+    var numRcrd = 0
     
     @IBOutlet weak var following: UISwitch!
     
     @IBAction func follwingChange(_ sender: Any) {
         rcrd.isFollowing = !rcrd.isFollowing
+        yourRcrds.rcrds[numRcrd].isFollowing = rcrd.isFollowing
     }
     
     func loadView() {

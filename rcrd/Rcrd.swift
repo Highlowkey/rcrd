@@ -13,17 +13,27 @@ class Rcrd: NSObject, NSCoding {
     var rcrdName: String
     var rcrdValuesArray: [String] = []
     var isFollowing: Bool = false
+    var numRcrd: Int
     
     init(_ nameIn: String,_ arrayIn: [String]) {
         rcrdName = nameIn
         rcrdValuesArray = arrayIn
-        isFollowing = false
+        isFollowing = true
+        numRcrd = 0
+    }
+    
+    init(_ nameIn: String,_ arrayIn: [String],_ numIn: Int) {
+        rcrdName = nameIn
+        rcrdValuesArray = arrayIn
+        isFollowing = true
+        numRcrd = numIn
     }
     
     init(_ nameIn: String,_ arrayIn: [String], _ followingIn: Bool) {
         rcrdName = nameIn
         rcrdValuesArray = arrayIn
         isFollowing = followingIn
+        numRcrd = 0
     }
     
     func encode(with aCoder: NSCoder) {

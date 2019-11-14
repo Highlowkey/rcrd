@@ -17,26 +17,25 @@ class RcrdView: UIViewController {
     
     var numRcrd: Int = 0
     
-    var rcrdName: String?
-    
-    var localValuesArray: [String] = []
+    var rcrdDisplayed: Rcrd = Rcrd("", [])
 
     @IBOutlet weak var oneRcrdViewText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        oneRcrdViewText.text = rcrdName
-        setChartValues(localValuesArray.count)
+        rcrdDisplayed = yourRcrds.rcrds[numRcrd]
+        oneRcrdViewText.text = rcrdDisplayed.rcrdName
+        setChartValues(rcrdDisplayed.rcrdValuesArray.count)
         // Do any additional setup after loading the view.
     }
     
     func setChartValues(_ count : Int = 20) {
         let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(localValuesArray[i])!
+            let val = Double(rcrdDisplayed.rcrdValuesArray[i])!
             return ChartDataEntry(x: Double(i), y: val)
         }
         
-        let set1 = LineChartDataSet(values: values, label: rcrdName)
+        let set1 = LineChartDataSet(values: values, label: rcrdDisplayed.rcrdName)
         let data = LineChartData(dataSet: set1)
         
         set1.colors = [NSUIColor.black]
@@ -53,6 +52,8 @@ class RcrdView: UIViewController {
     }
     
     @IBAction func deleteSegue(_ sender: Any) {
+        yourRcrds.rcrds[numRcrd].rcrdName = ""
+        yourRcrds.rcrds[numRcrd].rcrdValuesArray = []
         let identifier: String = String(numRcrd)
         performSegue(withIdentifier: identifier, sender: self)
     }
