@@ -203,18 +203,6 @@ class MainView: UIViewController {
     }
     
     @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
-//        if(segue.identifier == "1") {
-//            yourRcrds.rcrds[0] = Rcrd("", [])
-////            oneValueText.text = ""
-////            oneAverageValue.text = ""
-////            oneBestValue.text = ""
-//        }
-//        if(segue.identifier == "2") {
-//            yourRcrds.rcrds[1] = Rcrd("", [])
-////            twoValueText.text = ""
-////            twoAverageValue.text = ""
-////            twoBestValue.text = ""
-//        }
         saveRcrds()
         doReloadView()
     }
@@ -252,32 +240,6 @@ class MainView: UIViewController {
     //view reloading after delete or re-launch
     
     func doReloadView() {
-//        if (yourRcrds.rcrds[0].rcrdName != "") {
-//            oneRcrdText.text = yourRcrds.rcrds[0].rcrdName
-//            if (yourRcrds.rcrds[0].rcrdValuesArray.count > 0) {
-//                oneValueText.text = String(yourRcrds.rcrds[0].rcrdValuesArray[yourRcrds.rcrds[0].rcrdValuesArray.count-1])
-//                oneAverageValue.text = String(calcAverage(yourRcrds.rcrds[0].rcrdValuesArray))
-//                oneBestValue.text = String(calcHighest(yourRcrds.rcrds[0].rcrdValuesArray))
-//            }
-//            self.view.viewWithTag(2)!.isHidden = false
-//        }
-//        else {
-//            self.view.viewWithTag(2)!.isHidden = true
-//        }
-//
-//        if (yourRcrds.rcrds[1].rcrdName != "") {
-//            twoRcrdText.text = yourRcrds.rcrds[1].rcrdName
-//            if (yourRcrds.rcrds[1].rcrdValuesArray.count > 0) {
-//                twoValueText.text = String(yourRcrds.rcrds[1].rcrdValuesArray[yourRcrds.rcrds[1].rcrdValuesArray.count-1])
-//                twoAverageValue.text = String(calcAverage(yourRcrds.rcrds[1].rcrdValuesArray))
-//                twoBestValue.text = String(calcHighest(yourRcrds.rcrds[1].rcrdValuesArray))
-//            }
-//            self.view.viewWithTag(3)!.isHidden = false
-//        }
-//        else {
-//            self.view.viewWithTag(3)!.isHidden = true
-//        }
-        
         self.view.viewWithTag(2)!.isHidden = true
         self.view.viewWithTag(3)!.isHidden = true
         var firstFilled: Bool = false
