@@ -12,10 +12,18 @@ class Rcrd: NSObject, NSCoding {
     
     var rcrdName: String
     var rcrdValuesArray: [String] = []
+    var isFollowing: Bool = false
     
     init(_ nameIn: String,_ arrayIn: [String]) {
         rcrdName = nameIn
         rcrdValuesArray = arrayIn
+        isFollowing = false
+    }
+    
+    init(_ nameIn: String,_ arrayIn: [String], _ followingIn: Bool) {
+        rcrdName = nameIn
+        rcrdValuesArray = arrayIn
+        isFollowing = followingIn
     }
     
     func encode(with aCoder: NSCoder) {

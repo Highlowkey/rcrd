@@ -13,7 +13,6 @@ import os.log
 
 class RcrdList: UITableViewController {
     
-    
     var allRcrds: [Rcrd] = []
 
     override func viewDidLoad() {
@@ -24,12 +23,11 @@ class RcrdList: UITableViewController {
         return allRcrds.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = RcrdCell(tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath))
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RcrdCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath) as! RcrdCell
         if (allRcrds[indexPath.item].rcrdName != "" && allRcrds[indexPath.item].rcrdValuesArray.count > 0) {
-            cell.textLabel?.text = allRcrds[indexPath.item].rcrdName + " rcrd: " + String(calcHighest(allRcrds[indexPath.item].rcrdValuesArray))
-            cell.textLabel?.textColor = UIColor.black
             cell.rcrd = allRcrds[indexPath.item]
+            cell.loadView()
         }
         return cell
     }

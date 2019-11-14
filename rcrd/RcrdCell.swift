@@ -15,7 +15,14 @@ class RcrdCell: UITableViewCell {
     
     var rcrd: Rcrd = Rcrd("", [])
     
+    @IBOutlet weak var following: UISwitch!
+    
     @IBAction func follwingChange(_ sender: Any) {
-        print("hello")
+        rcrd.isFollowing = !rcrd.isFollowing
+    }
+    
+    func loadView() {
+        self.textLabel!.text = rcrd.rcrdName
+        self.following.isOn = rcrd.isFollowing
     }
 }
