@@ -25,10 +25,11 @@ class RcrdList: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath)
+        let cell = RcrdCell(tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath))
         if (allRcrds[indexPath.item].rcrdName != "" && allRcrds[indexPath.item].rcrdValuesArray.count > 0) {
             cell.textLabel?.text = allRcrds[indexPath.item].rcrdName + " rcrd: " + String(calcHighest(allRcrds[indexPath.item].rcrdValuesArray))
             cell.textLabel?.textColor = UIColor.black
+            cell.rcrd = allRcrds[indexPath.item]
         }
         return cell
     }
