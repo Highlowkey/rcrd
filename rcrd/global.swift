@@ -15,5 +15,14 @@ class rcrdInformation {
         rcrds = [Rcrd("", []), Rcrd("", [])]
         name = nameIn
     }
+    
+    func findRcrd(rcrd: String) -> Rcrd{
+        for n in rcrds {
+            if (n.rcrdName == rcrd) {
+                return rcrds[rcrds.firstIndex(of: n)!]
+            }
+        }
+        return Rcrd("", [])
+    }
 }
 var yourRcrds = rcrdInformation(nameIn: "rcrds")

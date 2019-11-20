@@ -15,15 +15,22 @@ class RcrdView: UIViewController {
     
     @IBOutlet weak var progressChart: LineChartView!
     
-    var numRcrd: Int = 0
+    var numDisplayed: Int = 0
     
     var rcrdDisplayed: Rcrd = Rcrd("", [])
+    
+    var index: Int = 0
 
     @IBOutlet weak var oneRcrdViewText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rcrdDisplayed = yourRcrds.rcrds[numRcrd]
+        for n in yourRcrds.rcrds {
+            if(n.rcrdName == rcrdDisplayed.rcrdName) {
+                index = yourRcrds.rcrds.firstIndex(of: n)!
+            }
+        }
+        rcrdDisplayed = yourRcrds.rcrds[index]
         oneRcrdViewText.text = rcrdDisplayed.rcrdName
         setChartValues(rcrdDisplayed.rcrdValuesArray.count)
         // Do any additional setup after loading the view.
@@ -52,9 +59,8 @@ class RcrdView: UIViewController {
     }
     
     @IBAction func deleteSegue(_ sender: Any) {
-        yourRcrds.rcrds[numRcrd].rcrdName = ""
-        yourRcrds.rcrds[numRcrd].rcrdValuesArray = []
-        let identifier: String = String(numRcrd)
+        yourRcrds.rcrds.remove(at: index)
+        let identifier: String = String(numDisplayed)
         performSegue(withIdentifier: identifier, sender: self)
     }
     
