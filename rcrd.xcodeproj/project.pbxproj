@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		922D146AF5A9F81EFFE0577F /* Pods_rcrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68482C560EB504F62E68E812 /* Pods_rcrd.framework */; };
+		CD0D8E68238B4EBD00647A2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0D8E67238B4EBD00647A2E /* GoogleService-Info.plist */; };
 		CD53EF8523711C8E0096C84F /* RcrdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53EF8423711C8E0096C84F /* RcrdList.swift */; };
 		CD5B3DFF236F949200B61356 /* Rcrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFC236F949200B61356 /* Rcrd.swift */; };
 		CD5B3E00236F949200B61356 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFD236F949200B61356 /* AccountView.swift */; };
@@ -44,6 +45,7 @@
 		2DDDBF268B9B0349EE18F482 /* Pods-rcrd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rcrd.release.xcconfig"; path = "Target Support Files/Pods-rcrd/Pods-rcrd.release.xcconfig"; sourceTree = "<group>"; };
 		68482C560EB504F62E68E812 /* Pods_rcrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rcrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.debug.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.debug.xcconfig"; sourceTree = "<group>"; };
+		CD0D8E67238B4EBD00647A2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD53EF8423711C8E0096C84F /* RcrdList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RcrdList.swift; sourceTree = "<group>"; };
 		CD5B3DFC236F949200B61356 /* Rcrd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rcrd.swift; sourceTree = "<group>"; };
 		CD5B3DFD236F949200B61356 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				CDF8F59F22B95C9F0090A05C /* Assets.xcassets */,
 				CDF8F5A122B95C9F0090A05C /* LaunchScreen.storyboard */,
 				CDF8F5A422B95C9F0090A05C /* Info.plist */,
+				CD0D8E67238B4EBD00647A2E /* GoogleService-Info.plist */,
 			);
 			path = rcrd;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF8F5A322B95C9F0090A05C /* LaunchScreen.storyboard in Resources */,
+				CD0D8E68238B4EBD00647A2E /* GoogleService-Info.plist in Resources */,
 				CDF8F5A022B95C9F0090A05C /* Assets.xcassets in Resources */,
 				CDF8F59E22B95C9F0090A05C /* Main.storyboard in Resources */,
 			);
