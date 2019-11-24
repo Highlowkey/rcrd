@@ -11,7 +11,7 @@ import UIKit
 import Charts
 
 
-class RcrdView: UIViewController {
+class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var progressChart: LineChartView!
     
@@ -23,6 +23,10 @@ class RcrdView: UIViewController {
 
     @IBOutlet weak var oneRcrdViewText: UILabel!
     
+    @IBOutlet weak var typePicker: UIPickerView!
+    
+    var types: [String] = ["total", "best", "average", "goal"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for n in yourRcrds.rcrds {
@@ -33,7 +37,23 @@ class RcrdView: UIViewController {
         rcrdDisplayed = yourRcrds.rcrds[index]
         oneRcrdViewText.text = rcrdDisplayed.rcrdName
         setChartValues(rcrdDisplayed.rcrdValuesArray.count)
+        typePicker.delegate = self
+        typePicker.dataSource = self
+        self.typePicker.selectRow(types.firstIndex(of: rcrdDisplayed.rcrdType)!, inComponent: 0, animated: true)
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return types.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        yourRcrds.rcrds[index].rcrdType = types[pickerView.selectedRow(inComponent: 0)]
+        return types[row]
     }
     
     func setChartValues(_ count : Int = 20) {

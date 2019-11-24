@@ -419,7 +419,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rcrdCell" id="ax6-hi-uff" customClass="RcrdCell" customModule="rcrd" customModuleProvider="target">
@@ -429,19 +429,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-5T-kx9">
-                                            <rect key="frame" x="345" y="6" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="onTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-5T-kx9">
+                                            <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                            <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="follwingChange:" destination="ax6-hi-uff" eventType="valueChanged" id="Rxb-UF-ioG"/>
                                             </connections>
                                         </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rcrd:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-gr-sBq">
+                                            <rect key="frame" x="144" y="12" width="36" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="l3C-gr-sBq" firstAttribute="leading" secondItem="ml9-fz-aUu" secondAttribute="leading" constant="144" id="1PH-6H-x0J"/>
+                                        <constraint firstAttribute="trailing" secondItem="PJk-5T-kx9" secondAttribute="trailing" constant="22" id="3o1-Mz-UMG"/>
+                                        <constraint firstItem="l3C-gr-sBq" firstAttribute="centerY" secondItem="ml9-fz-aUu" secondAttribute="centerY" constant="0.25" id="jZK-qR-Q1N"/>
+                                        <constraint firstItem="PJk-5T-kx9" firstAttribute="centerY" secondItem="ml9-fz-aUu" secondAttribute="centerY" id="svr-hm-ja6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="bestLabel" destination="l3C-gr-sBq" id="vGp-XL-rS6"/>
                                     <outlet property="following" destination="PJk-5T-kx9" id="DUC-a2-JFU"/>
                                 </connections>
                             </tableViewCell>
@@ -497,6 +509,19 @@
                                     <action selector="deleteSegue:" destination="hXs-pS-ZXo" eventType="touchUpInside" id="dpl-64-Qur"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-6e-7Tx">
+                                <rect key="frame" x="172" y="370" width="222" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="D2n-vN-fR1"/>
+                                    <constraint firstAttribute="height" constant="104" id="FQQ-Ur-mJI"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rcrd Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-SO-Eyw">
+                                <rect key="frame" x="41" y="406" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -506,11 +531,16 @@
                             <constraint firstItem="2y5-64-wRr" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="CQf-9N-R6Z"/>
                             <constraint firstItem="gM2-9j-Kps" firstAttribute="top" secondItem="Hgf-me-XhR" secondAttribute="top" constant="20" id="K1g-kl-3sk"/>
                             <constraint firstItem="Vw7-Op-kay" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="NbR-oz-8do"/>
+                            <constraint firstItem="QvP-6e-7Tx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oRh-SO-Eyw" secondAttribute="trailing" constant="1" id="NqC-Ov-yt1"/>
+                            <constraint firstItem="oRh-SO-Eyw" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="UuW-BJ-AnG"/>
                             <constraint firstItem="fqC-ap-Zpk" firstAttribute="centerX" secondItem="Hgf-me-XhR" secondAttribute="centerX" id="Wdi-cc-hyn"/>
+                            <constraint firstItem="QvP-6e-7Tx" firstAttribute="top" secondItem="Vw7-Op-kay" secondAttribute="bottom" constant="8" id="Zpd-B9-axb"/>
                             <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="2y5-64-wRr" secondAttribute="trailing" constant="118" id="eNy-If-jPo"/>
                             <constraint firstItem="2y5-64-wRr" firstAttribute="top" secondItem="gM2-9j-Kps" secondAttribute="bottom" constant="28" id="mVX-2x-NeY"/>
                             <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="Vw7-Op-kay" secondAttribute="trailing" constant="40" id="t0e-8b-MGF"/>
                             <constraint firstItem="gM2-9j-Kps" firstAttribute="leading" secondItem="Hgf-me-XhR" secondAttribute="leading" constant="41" id="usS-Xw-Lfb"/>
+                            <constraint firstItem="oRh-SO-Eyw" firstAttribute="top" secondItem="Vw7-Op-kay" secondAttribute="bottom" constant="44" id="v8H-Xk-Azv"/>
+                            <constraint firstItem="Hgf-me-XhR" firstAttribute="trailing" secondItem="QvP-6e-7Tx" secondAttribute="trailing" constant="20" id="yRo-bU-Hny"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hgf-me-XhR"/>
                     </view>
@@ -518,6 +548,7 @@
                     <connections>
                         <outlet property="oneRcrdViewText" destination="gM2-9j-Kps" id="VP1-pj-NMX"/>
                         <outlet property="progressChart" destination="Vw7-Op-kay" id="4Na-r5-FzA"/>
+                        <outlet property="typePicker" destination="QvP-6e-7Tx" id="e6L-Xu-IvH"/>
                         <segue destination="X0H-9D-K1b" kind="unwind" identifier="1" unwindAction="unwindAfterDeleteWithSegue:" id="HdK-7U-FRX"/>
                         <segue destination="X0H-9D-K1b" kind="unwind" identifier="2" unwindAction="unwindAfterDeleteWithSegue:" id="exg-Xt-S1n"/>
                     </connections>

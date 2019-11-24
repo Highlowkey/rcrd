@@ -38,6 +38,7 @@ class MainView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         if let savedRcrds = loadRcrds() {
             yourRcrds.rcrds.removeAll()
             yourRcrds.rcrds += savedRcrds
@@ -56,6 +57,13 @@ class MainView: UIViewController {
             doReloadView()
         }
     }
+    
+    @objc func refresh(notification: NSNotification) {
+        print("Refreshing...")
+        doReloadView()
+        saveRcrds()
+    }
+    
     
     //prompting rcrd adding
     
@@ -119,40 +127,18 @@ class MainView: UIViewController {
         }
     }
     
-    func calcAverage(_ valueArray: [String]) -> Double {
-        var sum: Double = 0
-        var average: Double
-        
-        for n in valueArray {
-            sum += Double(n)!
-        }
-
-        average = sum/Double((valueArray.count))
-        return round(average*1000)/1000
-    }
-    
-    func calcHighest(_ valueArray: [String]) -> Double {
-        var highestValue: Double = Double(valueArray[0])!
-        for n in valueArray {
-            if(Double(n)! > highestValue) {
-                highestValue = Double(n)!
-            }
-        }
-        return highestValue
-    }
-    
     //rcrdView segue management
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "oneSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 1
-            destination.rcrdDisplayed = yourRcrds.findRcrd(rcrd: oneRcrdText.text!)
+            destination.rcrdDisplayed = yourRcrds.findRcrd(oneRcrdText.text!)
         }
         if(segue.identifier == "twoSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 2
-            destination.rcrdDisplayed = yourRcrds.findRcrd(rcrd: twoRcrdText.text!)
+            destination.rcrdDisplayed = yourRcrds.findRcrd(twoRcrdText.text!)
         }
     }
     
@@ -209,8 +195,8 @@ class MainView: UIViewController {
                     oneRcrdText.text = n.rcrdName
                     if (n.rcrdValuesArray.count > 0) {
                         oneValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
-                        oneAverageValue.text = String(calcAverage(n.rcrdValuesArray))
-                        oneBestValue.text = String(calcHighest(n.rcrdValuesArray))
+                        oneAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
+                        oneBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
                     }
                     firstFilled = true
                     self.view.viewWithTag(2)!.isHidden = false
@@ -221,8 +207,8 @@ class MainView: UIViewController {
                     twoRcrdText.text = n.rcrdName
                     if (n.rcrdValuesArray.count > 0) {
                         twoValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
-                        twoAverageValue.text = String(calcAverage(n.rcrdValuesArray))
-                        twoBestValue.text = String(calcHighest(n.rcrdValuesArray))
+                        twoAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
+                        twoBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
                     }
                     self.view.viewWithTag(3)!.isHidden = false
                 }
