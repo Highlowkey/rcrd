@@ -10,12 +10,15 @@ import UIKit
 import Charts
 import Foundation
 import os.log
+import Firebase
 
 class MainView: UIViewController {
     
     var inputArray: [String] = []
     
-    var numRcrds : Int = 2
+    var numRcrds: Int = 2
+    
+    var ref: DatabaseReference!
     
     //addRcrdView outlets
     @IBOutlet weak var rcrdText: UITextField!
@@ -33,35 +36,20 @@ class MainView: UIViewController {
     @IBOutlet weak var twoAverageValue: UILabel!
     @IBOutlet weak var twoBestValue: UILabel!
     
-    
     //view loading
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        doReloadView()
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
-        if let savedRcrds = loadRcrds() {
-            yourRcrds.rcrds.removeAll()
-            yourRcrds.rcrds += savedRcrds
-            if yourRcrds.rcrds.count > 0 {
-                if let savedOneRcrd: Rcrd = yourRcrds.rcrds[0] {
-                    yourRcrds.rcrds[0].rcrdName = savedOneRcrd.rcrdName
-                    yourRcrds.rcrds[0].rcrdValuesArray = savedOneRcrd.rcrdValuesArray
-                }
-                if yourRcrds.rcrds.count > 1 {
-                    if let savedTwoRcrd: Rcrd = yourRcrds.rcrds[1] {
-                        yourRcrds.rcrds[1].rcrdName = savedTwoRcrd.rcrdName
-                        yourRcrds.rcrds[1].rcrdValuesArray = savedTwoRcrd.rcrdValuesArray
-                    }
-                }
-            }
-            doReloadView()
-        }
+
     }
     
     @objc func refresh(notification: NSNotification) {
         print("Refreshing...")
         doReloadView()
-        saveRcrds()
+        //saveRcrds()
     }
     
     
@@ -81,7 +69,6 @@ class MainView: UIViewController {
     
     func addRcrd(_ rcrd: String = "") {
         rcrdText.text = rcrd
-        
         self.view.viewWithTag(1)?.isHidden = false;
         self.view.sendSubviewToBack(self.view.viewWithTag(2)!)
         self.view.bringSubviewToFront(self.view.viewWithTag(1)!)
@@ -93,36 +80,17 @@ class MainView: UIViewController {
     @IBAction func done_adding(_ sender: Any) {
         self.view.viewWithTag(1)?.isHidden = true
         if(rcrdText!.text != "") {
-            var isNew: Bool = true
-            var index: Int = 0
-            for n in yourRcrds.rcrds {
-                if (n.rcrdName == rcrdText!.text) {
-                    isNew = false
-                    index = yourRcrds.rcrds.firstIndex(of: n)!
+            if let text = valueText.text {
+                if Double(text) != nil {
+                    ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("values").childByAutoId().setValue(valueText.text!)
                 }
             }
-            inputArray.append(rcrdText!.text!)
-        
-            if(isNew) {
-                yourRcrds.rcrds.append(Rcrd(inputArray[inputArray.count-1],[]))
-                index = yourRcrds.rcrds.count-1
-                if let text = valueText.text {
-                    if Double(text) != nil {
-                        yourRcrds.rcrds[index].rcrdValuesArray.append(valueText!.text!)
-                    }
-                }
-            }
-            if(!isNew) {
-                if let text = valueText.text {
-                    if Double(text) != nil {
-                        yourRcrds.rcrds[index].rcrdValuesArray.append(valueText!.text!)
-                    }
-                }
-            }
+            ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("type").setValue("best")
+            ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("following").setValue(true)
+            
             rcrdText.text!.removeAll()
             valueText.text!.removeAll()
             self.view.endEditing(true)
-            saveRcrds()
             doReloadView()
         }
     }
@@ -143,7 +111,7 @@ class MainView: UIViewController {
     }
     
     @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
-        saveRcrds()
+        //saveRcrds()
         doReloadView()
     }
     
@@ -151,30 +119,6 @@ class MainView: UIViewController {
     
     @IBAction func accountSegue(_ sender: Any) {
         performSegue(withIdentifier: "accountSegue", sender: self)
-    }
-
-    //user rcrd saving and loading
-    
-    func application(_ application: UIApplication,
-                shouldSaveApplicationState coder: NSCoder) -> Bool {
-       // Save the current app version to the archive.
-       coder.encode(1.0, forKey: "rcrdVersion")
-            
-       // Always save state information.
-       return true
-    }
-    
-    private func saveRcrds() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(yourRcrds.rcrds, toFile: Rcrd.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Rcrds successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save yourRcrds.rcrds...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadRcrds() -> [Rcrd]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Rcrd.ArchiveURL.path) as? [Rcrd]
     }
 
     //view reloading after delete or re-launch
@@ -189,31 +133,42 @@ class MainView: UIViewController {
         twoAverageValue.text = ""
         twoBestValue.text = ""
         var firstFilled: Bool = false
-        for n in yourRcrds.rcrds {
-            if(!firstFilled) {
-                if (n.rcrdName != "" && n.isFollowing == true) {
-                    oneRcrdText.text = n.rcrdName
-                    if (n.rcrdValuesArray.count > 0) {
-                        oneValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
-                        oneAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
-                        oneBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
+        ref.child("Patrick McElroy").child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
+            for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
+                let rcrdName = rcrd.key
+                let rcrdType = rcrd.childSnapshot(forPath: "type").value
+                let isFollowing = rcrd.childSnapshot(forPath: "following").value
+                var rcrdValuesArray: [String] = []
+                if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
+                    for value in rcrd.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
+                        rcrdValuesArray.append(value.value as! String)
                     }
-                    firstFilled = true
-                    self.view.viewWithTag(2)!.isHidden = false
+                }
+                if(!firstFilled) {
+                    if (rcrdName != "" && isFollowing as! Bool == true) {
+                        self.oneRcrdText.text = rcrdName
+                        if (rcrdValuesArray.count > 0) {
+                            self.oneValueText.text = String(rcrdValuesArray[rcrdValuesArray.count-1])
+                            self.oneAverageValue.text = String(yourRcrds.calcAverageHelper(rcrdValuesArray))
+                            self.oneBestValue.text = String(yourRcrds.calcHighestHelper(rcrdValuesArray))
+                        }
+                        firstFilled = true
+                        self.view.viewWithTag(2)!.isHidden = false
+                    }
+                }
+                else {
+                    if (rcrdName != "" && isFollowing as! Bool == true) {
+                        self.twoRcrdText.text = rcrdName
+                        if (rcrdValuesArray.count > 0) {
+                            self.twoValueText.text = String(rcrdValuesArray[rcrdValuesArray.count-1])
+                            self.twoAverageValue.text = String(yourRcrds.calcAverageHelper(rcrdValuesArray))
+                            self.twoBestValue.text = String(yourRcrds.calcHighestHelper(rcrdValuesArray))
+                        }
+                        self.view.viewWithTag(3)!.isHidden = false
+                    }
                 }
             }
-            else {
-                if (n.rcrdName != "" && n.isFollowing == true) {
-                    twoRcrdText.text = n.rcrdName
-                    if (n.rcrdValuesArray.count > 0) {
-                        twoValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
-                        twoAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
-                        twoBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
-                    }
-                    self.view.viewWithTag(3)!.isHidden = false
-                }
-            }
-        }
+        })
     }
     
     

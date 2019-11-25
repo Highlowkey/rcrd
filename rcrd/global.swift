@@ -9,10 +9,11 @@
 import Foundation
 
 class rcrdInformation {
+    
     var name: String
     var rcrds: [Rcrd] = []
     init(nameIn: String) {
-        rcrds = [Rcrd("", []), Rcrd("", [])]
+        rcrds = []
         name = nameIn
     }
     
@@ -69,6 +70,5 @@ class rcrdInformation {
         return highestValue
     }
 }
-
-
 var yourRcrds = rcrdInformation(nameIn: "rcrds")
+

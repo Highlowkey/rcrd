@@ -14,12 +14,14 @@ class Rcrd: NSObject, NSCoding {
     var rcrdValuesArray: [String] = []
     var isFollowing: Bool
     var rcrdType: String
+    var userID: String
     
     init(_ nameIn: String,_ arrayIn: [String]) {
         rcrdName = nameIn
         rcrdValuesArray = arrayIn
         isFollowing = true
         rcrdType = "best"
+        userID = NSFullUserName()
     }
     
     init(_ nameIn: String,_ arrayIn: [String], _ followingIn: Bool) {
@@ -27,6 +29,7 @@ class Rcrd: NSObject, NSCoding {
         rcrdValuesArray = arrayIn
         isFollowing = followingIn
         rcrdType = "best"
+        userID = NSFullUserName()
     }
     
     init(_ nameIn: String,_ arrayIn: [String], _ followingIn: Bool, _ typeIn: String) {
@@ -34,6 +37,7 @@ class Rcrd: NSObject, NSCoding {
         rcrdValuesArray = arrayIn
         isFollowing = followingIn
         rcrdType = typeIn
+        userID = NSFullUserName()
     }
     
     func encode(with aCoder: NSCoder) {
