@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Charts
+import Firebase
 
 
 class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -17,9 +18,13 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var numDisplayed: Int = 0
     
-    var rcrdDisplayed: Rcrd = Rcrd("", [])
+    var rcrdName: String!
+    
+    var ref: DatabaseReference!
     
     var index: Int = 0
+    
+    var user: String = "Patrick McElroy"
 
     @IBOutlet weak var oneRcrdViewText: UILabel!
     
@@ -29,13 +34,8 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for n in yourRcrds.rcrds {
-            if(n.rcrdName == rcrdDisplayed.rcrdName) {
-                index = yourRcrds.rcrds.firstIndex(of: n)!
-            }
-        }
-        rcrdDisplayed = yourRcrds.rcrds[index]
-        oneRcrdViewText.text = rcrdDisplayed.rcrdName
+        ref = Database.database().reference().child(user).child("rcrds").child(rcrdName)
+        oneRcrdViewText.text = rcrdName
         setChartValues(rcrdDisplayed.rcrdValuesArray.count)
         typePicker.delegate = self
         typePicker.dataSource = self
@@ -52,7 +52,7 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        yourRcrds.rcrds[index].rcrdType = types[pickerView.selectedRow(inComponent: 0)]
+        ref.child(user).child("rcrds").child(rcrdDisplayed.rcrdName).setValue(["type": types[pickerView.selectedRow(inComponent: 0)]])
         return types[row]
     }
     
@@ -79,7 +79,7 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func deleteSegue(_ sender: Any) {
-        yourRcrds.rcrds.remove(at: index)
+        ref.child(user).child("rcrds").child(rcrdDisplayed.rcrdName).removeValue()
         let identifier: String = String(numDisplayed)
         performSegue(withIdentifier: identifier, sender: self)
     }

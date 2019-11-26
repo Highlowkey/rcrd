@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class rcrdInformation {
     
@@ -17,13 +18,24 @@ class rcrdInformation {
         name = nameIn
     }
     
-    func findRcrd(_ rcrd: String) -> Rcrd{
-        for n in rcrds {
-            if (n.rcrdName == rcrd) {
-                return rcrds[rcrds.firstIndex(of: n)!]
-            }
-        }
-        return Rcrd("", [])
+    func findRcrd( rcrd: Rcrd, _ name: String, _ user: String, _ ref: DatabaseReference) {
+//        let newRef = ref.child(user).child("rcrds").child(name)
+//        var rcrdName: String = ""
+//        var rcrdType: String = ""
+//        var isFollowing: Bool = true
+//        var rcrdValuesArray: [String] = []
+//        newRef.observeSingleEvent(of: .value, with: {(snapshot) in
+//            print("observing")
+//            rcrdName = snapshot.key
+//            rcrdType = snapshot.childSnapshot(forPath: "type").value as! String
+//            isFollowing = snapshot.childSnapshot(forPath: "following").value as! Bool
+//            if (snapshot.childSnapshot(forPath: "values").childrenCount > 0) {
+//                for value in snapshot.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
+//                    rcrdValuesArray.append(value.value as! String)
+//                }
+//            }
+//            rcrd = Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType)
+        })
     }
     
     func calcAverage(_ rcrd: Rcrd) -> Double {

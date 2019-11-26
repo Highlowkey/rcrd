@@ -20,6 +20,8 @@ class MainView: UIViewController {
     
     var ref: DatabaseReference!
     
+    var user: String = "Patrick McElroy"
+    
     //addRcrdView outlets
     @IBOutlet weak var rcrdText: UITextField!
     @IBOutlet weak var valueText: UITextField!
@@ -101,12 +103,12 @@ class MainView: UIViewController {
         if(segue.identifier == "oneSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 1
-            destination.rcrdDisplayed = yourRcrds.findRcrd(oneRcrdText.text!)
+//            destination.rcrdDisplayed = yourRcrds.findRcrd(oneRcrdText.text!, user, ref)
         }
         if(segue.identifier == "twoSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 2
-            destination.rcrdDisplayed = yourRcrds.findRcrd(twoRcrdText.text!)
+            destination.rcrdName = twoRcrdText.text!
         }
     }
     
@@ -120,6 +122,7 @@ class MainView: UIViewController {
     @IBAction func accountSegue(_ sender: Any) {
         performSegue(withIdentifier: "accountSegue", sender: self)
     }
+    
 
     //view reloading after delete or re-launch
     
