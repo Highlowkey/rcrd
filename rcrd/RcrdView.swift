@@ -24,6 +24,8 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var index: Int = 0
     
+    var rcrdDisplayed : Rcrd = Rcrd("", [])
+    
     var user: String = "Patrick McElroy"
 
     @IBOutlet weak var oneRcrdViewText: UILabel!

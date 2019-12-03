@@ -43,15 +43,27 @@ class MainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        doReloadView()
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
-
+        ref.child("Patrick McElroy").child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
+        for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
+            let rcrdName = rcrd.key
+            let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
+            let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
+            var rcrdValuesArray: [String] = []
+            if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
+                for value in rcrd.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
+                    rcrdValuesArray.append(value.value as! String)
+                    }
+            }
+            yourRcrds.rcrds.append(Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType))
+            self.doReloadView()
+        }
+        })
     }
     
     @objc func refresh(notification: NSNotification) {
         print("Refreshing...")
         doReloadView()
-        //saveRcrds()
     }
     
     
@@ -77,23 +89,55 @@ class MainView: UIViewController {
         
     }
     
-    //updating yourRcrds.rcrds after adding
+    //updating your rcrds after adding
     
     @IBAction func done_adding(_ sender: Any) {
         self.view.viewWithTag(1)?.isHidden = true
         if(rcrdText!.text != "") {
-            if let text = valueText.text {
-                if Double(text) != nil {
-                    ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("values").childByAutoId().setValue(valueText.text!)
+            var isNew: Bool = true
+            var index: Int = 0
+            for n in yourRcrds.rcrds {
+                if (n.rcrdName == rcrdText!.text) {
+                    isNew = false
+                    index = yourRcrds.rcrds.firstIndex(of: n)!
                 }
             }
-            ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("type").setValue("best")
-            ref.child("Patrick McElroy").child("rcrds").child(rcrdText.text!).child("following").setValue(true)
+            inputArray.append(rcrdText!.text!)
+
+            if(isNew) {
+                yourRcrds.rcrds.append(Rcrd(inputArray[inputArray.count-1],[]))
+                index = yourRcrds.rcrds.count-1
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        yourRcrds.rcrds[index].rcrdValuesArray.append(valueText!.text!)
+                    }
+                }
+            }
+            if(!isNew) {
+                if let text = valueText.text {
+                    if Double(text) != nil {
+                        yourRcrds.rcrds[index].rcrdValuesArray.append(valueText!.text!)
+                    }
+                }
+            }
             
             rcrdText.text!.removeAll()
             valueText.text!.removeAll()
             self.view.endEditing(true)
+            updateFirebase()
             doReloadView()
+        }
+    }
+    
+    //update firebase
+    
+    func updateFirebase() {
+        for n in yourRcrds.rcrds {
+            ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("type").setValue(n.rcrdType)
+            ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("following").setValue(n.isFollowing)
+            for a in n.rcrdValuesArray {
+                ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("values").childByAutoId().setValue(a)
+            }
         }
     }
     
@@ -103,17 +147,16 @@ class MainView: UIViewController {
         if(segue.identifier == "oneSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 1
-//            destination.rcrdDisplayed = yourRcrds.findRcrd(oneRcrdText.text!, user, ref)
+            destination.rcrdDisplayed = yourRcrds.findRcrd(name: oneRcrdText.text!)
         }
         if(segue.identifier == "twoSegue") {
             let destination = segue.destination as! RcrdView
             destination.numDisplayed = 2
-            destination.rcrdName = twoRcrdText.text!
+            destination.rcrdDisplayed = yourRcrds.findRcrd(name: twoRcrdText.text!)
         }
     }
     
     @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
-        //saveRcrds()
         doReloadView()
     }
     
@@ -136,43 +179,31 @@ class MainView: UIViewController {
         twoAverageValue.text = ""
         twoBestValue.text = ""
         var firstFilled: Bool = false
-        ref.child("Patrick McElroy").child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
-            for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
-                let rcrdName = rcrd.key
-                let rcrdType = rcrd.childSnapshot(forPath: "type").value
-                let isFollowing = rcrd.childSnapshot(forPath: "following").value
-                var rcrdValuesArray: [String] = []
-                if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
-                    for value in rcrd.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
-                        rcrdValuesArray.append(value.value as! String)
+        for n in yourRcrds.rcrds {
+            if(!firstFilled) {
+                if (n.rcrdName != "" && n.isFollowing == true) {
+                    oneRcrdText.text = n.rcrdName
+                    if (n.rcrdValuesArray.count > 0) {
+                        oneValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
+                        oneAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
+                        oneBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
                     }
-                }
-                if(!firstFilled) {
-                    if (rcrdName != "" && isFollowing as! Bool == true) {
-                        self.oneRcrdText.text = rcrdName
-                        if (rcrdValuesArray.count > 0) {
-                            self.oneValueText.text = String(rcrdValuesArray[rcrdValuesArray.count-1])
-                            self.oneAverageValue.text = String(yourRcrds.calcAverageHelper(rcrdValuesArray))
-                            self.oneBestValue.text = String(yourRcrds.calcHighestHelper(rcrdValuesArray))
-                        }
-                        firstFilled = true
-                        self.view.viewWithTag(2)!.isHidden = false
-                    }
-                }
-                else {
-                    if (rcrdName != "" && isFollowing as! Bool == true) {
-                        self.twoRcrdText.text = rcrdName
-                        if (rcrdValuesArray.count > 0) {
-                            self.twoValueText.text = String(rcrdValuesArray[rcrdValuesArray.count-1])
-                            self.twoAverageValue.text = String(yourRcrds.calcAverageHelper(rcrdValuesArray))
-                            self.twoBestValue.text = String(yourRcrds.calcHighestHelper(rcrdValuesArray))
-                        }
-                        self.view.viewWithTag(3)!.isHidden = false
-                    }
+                firstFilled = true
+                self.view.viewWithTag(2)!.isHidden = false
                 }
             }
-        })
+            else {
+                if (n.rcrdName != "" && n.isFollowing == true) {
+                    twoRcrdText.text = n.rcrdName
+                    if (n.rcrdValuesArray.count > 0) {
+                        twoValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
+                        twoAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
+                        twoBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
+                    }
+                    self.view.viewWithTag(3)!.isHidden = false
+                    }
+                }
+        }
     }
-    
     
 }
