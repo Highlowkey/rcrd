@@ -26,7 +26,7 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var rcrdDisplayed : Rcrd = Rcrd("", [])
     
-    var user: String = "Patrick McElroy"
+    var user: String = UIDevice.current.identifierForVendor!.uuidString
 
     @IBOutlet weak var oneRcrdViewText: UILabel!
     
@@ -36,6 +36,7 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rcrdName = rcrdDisplayed.rcrdName
         ref = Database.database().reference().child(user).child("rcrds").child(rcrdName)
         oneRcrdViewText.text = rcrdName
         setChartValues(rcrdDisplayed.rcrdValuesArray.count)
@@ -81,7 +82,8 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func deleteSegue(_ sender: Any) {
-        ref.child(user).child("rcrds").child(rcrdDisplayed.rcrdName).removeValue()
+        ref.removeValue()
+        yourRcrds.rcrds.remove(at: yourRcrds.rcrds.firstIndex(of: rcrdDisplayed)!)
         let identifier: String = String(numDisplayed)
         performSegue(withIdentifier: identifier, sender: self)
     }

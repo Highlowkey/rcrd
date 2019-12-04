@@ -13,18 +13,20 @@ import os.log
 
 class RcrdList: UITableViewController {
     
+    var rcrdArray: [Rcrd]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return yourRcrds.rcrds.count
+        return rcrdArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RcrdCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath) as! RcrdCell
-        if (yourRcrds.rcrds[indexPath.item].rcrdName != "" && yourRcrds.rcrds[indexPath.item].rcrdValuesArray.count > 0) {
-            cell.rcrd = yourRcrds.rcrds[indexPath.item]
+        if (rcrdArray[indexPath.item].rcrdName != "" && rcrdArray[indexPath.item].rcrdValuesArray.count > 0) {
+            cell.rcrd = rcrdArray[indexPath.item]
             cell.numRcrd = indexPath.item
             cell.loadView()
         }

@@ -26,6 +26,7 @@ class AccountView: UIViewController {
     @IBAction func updateAccount(_ sender: Any) {
         ref.child(accountName.text ?? "testing").setValue(UIDevice.current.identifierForVendor?.uuidString)
     }
+    
     @IBAction func showAccount(_ sender: Any) {
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
             self.otherUser = snapshot.childSnapshot(forPath: "Patrick McElroy").value as? String
@@ -40,8 +41,15 @@ class AccountView: UIViewController {
                         }
                 }
                 otherRcrds.rcrds.append(Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType))
+                self.performSegue(withIdentifier: "otherListSegue", sender: self)
             }
         })
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "otherListSegue") {
+            let destination = segue.destination as! RcrdList
+            destination.rcrdArray = otherRcrds.rcrds
+        }
     }
 }

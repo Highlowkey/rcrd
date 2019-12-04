@@ -331,7 +331,7 @@
                                 </constraints>
                                 <state key="normal" image="list_segue"/>
                                 <connections>
-                                    <segue destination="wGZ-8Y-brj" kind="show" identifier="listSegue" id="QZw-Dj-QBH"/>
+                                    <action selector="listSegue:" destination="7C4-iX-lGN" eventType="touchUpInside" id="CUe-nG-N9Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -389,6 +389,7 @@
                         <outlet property="twoValueText" destination="ATs-3N-i9h" id="Gnm-EA-sxG"/>
                         <outlet property="valueText" destination="eao-bU-3Lo" id="THf-Ib-M4h"/>
                         <segue destination="BBw-KK-QMC" kind="show" identifier="accountSegue" id="iEL-gi-5g9"/>
+                        <segue destination="wGZ-8Y-brj" kind="show" identifier="listSegue" id="ohk-TQ-zTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-DT-abR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -432,6 +433,7 @@
                     <navigationItem key="navigationItem" id="kFt-Nk-QVv"/>
                     <connections>
                         <outlet property="accountName" destination="4fR-4z-EHa" id="C9C-Ia-cWj"/>
+                        <segue destination="wGZ-8Y-brj" kind="show" identifier="otherListSegue" id="5mY-pk-qtB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-01-Zvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -601,6 +603,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FAw-Zz-fb7"/>
+        <segue reference="5mY-pk-qtB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

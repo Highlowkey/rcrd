@@ -154,6 +154,10 @@ class MainView: UIViewController {
             destination.numDisplayed = 2
             destination.rcrdDisplayed = yourRcrds.findRcrd(name: twoRcrdText.text!)
         }
+        if(segue.identifier == "listSegue") {
+            let destination = segue.destination as! RcrdList
+            destination.rcrdArray = yourRcrds.rcrds
+        }
     }
     
     @IBAction func unwindAfterDelete(segue:UIStoryboardSegue) {
@@ -164,6 +168,10 @@ class MainView: UIViewController {
     
     @IBAction func accountSegue(_ sender: Any) {
         performSegue(withIdentifier: "accountSegue", sender: self)
+    }
+    
+    @IBAction func listSegue(_ sender: Any) {
+        performSegue(withIdentifier: "listSegue", sender: self)
     }
     
 
