@@ -388,24 +388,51 @@
                         <outlet property="twoRcrdText" destination="2BI-S5-l07" id="nte-8q-IFF"/>
                         <outlet property="twoValueText" destination="ATs-3N-i9h" id="Gnm-EA-sxG"/>
                         <outlet property="valueText" destination="eao-bU-3Lo" id="THf-Ib-M4h"/>
-                        <segue destination="BBw-KK-QMC" kind="show" identifier="twoSegue" id="iEL-gi-5g9"/>
+                        <segue destination="BBw-KK-QMC" kind="show" identifier="accountSegue" id="iEL-gi-5g9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-DT-abR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794" y="118"/>
         </scene>
-        <!--Rcrd View-->
+        <!--Account View-->
         <scene sceneID="jF0-wk-LCI">
             <objects>
-                <viewController title="Rcrd View" id="BBw-KK-QMC" customClass="AccountView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Rcrd View" id="BBw-KK-QMC" userLabel="Account View" customClass="AccountView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C4f-SU-bRU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-4z-EHa">
+                                <rect key="frame" x="110" y="255" width="195" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
+                                <rect key="frame" x="130" y="344" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update Account Name"/>
+                                <connections>
+                                    <action selector="updateAccount:" destination="BBw-KK-QMC" eventType="touchUpInside" id="sXG-qa-Woi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2im-O5-g16">
+                                <rect key="frame" x="150" y="534" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="showOtherRcrds"/>
+                                <connections>
+                                    <action selector="showAccount:" destination="BBw-KK-QMC" eventType="touchUpInside" id="W78-9E-E3Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="okJ-00-jZ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="kFt-Nk-QVv"/>
+                    <connections>
+                        <outlet property="accountName" destination="4fR-4z-EHa" id="C9C-Ia-cWj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-01-Zvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

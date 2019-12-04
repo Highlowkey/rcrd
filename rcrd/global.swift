@@ -72,4 +72,5 @@ class rcrdInformation {
     }
 }
 var yourRcrds = rcrdInformation(nameIn: "rcrds")
+var otherRcrds = rcrdInformation(nameIn: "otherRcrds")
 

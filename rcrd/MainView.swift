@@ -2,8 +2,8 @@
 //  MainView.swift
 //  rcrd
 //
-//  Created by Patrick McElroy on 6/18/19.
-//  Copyright © 2019 Patrick McElroy. All rights reserved.
+//  Created by user on 6/18/19.
+//  Copyright © 2019 user. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class MainView: UIViewController {
     
     var ref: DatabaseReference!
     
-    var user: String = "Patrick McElroy"
+    var user: String = UIDevice.current.identifierForVendor!.uuidString
     
     //addRcrdView outlets
     @IBOutlet weak var rcrdText: UITextField!
@@ -44,20 +44,20 @@ class MainView: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
-        ref.child("Patrick McElroy").child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
-        for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
-            let rcrdName = rcrd.key
-            let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
-            let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
-            var rcrdValuesArray: [String] = []
-            if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
-                for value in rcrd.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
-                    rcrdValuesArray.append(value.value as! String)
-                    }
+        ref.child(user).child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
+            for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
+                let rcrdName = rcrd.key
+                let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
+                let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
+                var rcrdValuesArray: [String] = []
+                if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
+                    for value in rcrd.childSnapshot(forPath: "values").children.allObjects as! [DataSnapshot] {
+                        rcrdValuesArray.append(value.value as! String)
+                        }
+                }
+                yourRcrds.rcrds.append(Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType))
+                self.doReloadView()
             }
-            yourRcrds.rcrds.append(Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType))
-            self.doReloadView()
-        }
         })
     }
     
@@ -133,10 +133,10 @@ class MainView: UIViewController {
     
     func updateFirebase() {
         for n in yourRcrds.rcrds {
-            ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("type").setValue(n.rcrdType)
-            ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("following").setValue(n.isFollowing)
+            ref.child(user).child("rcrds").child(n.rcrdName).child("type").setValue(n.rcrdType)
+            ref.child(user).child("rcrds").child(n.rcrdName).child("following").setValue(n.isFollowing)
             for a in n.rcrdValuesArray {
-                ref.child("Patrick McElroy").child("rcrds").child(n.rcrdName).child("values").childByAutoId().setValue(a)
+                ref.child(user).child("rcrds").child(n.rcrdName).child("values").childByAutoId().setValue(a)
             }
         }
     }
