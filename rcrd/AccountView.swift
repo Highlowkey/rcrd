@@ -16,6 +16,7 @@ class AccountView: UIViewController {
     var otherUser: String!
     
     @IBOutlet weak var accountName: UITextField!
+    @IBOutlet weak var otherAccountName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class AccountView: UIViewController {
     
     @IBAction func showAccount(_ sender: Any) {
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            self.otherUser = snapshot.childSnapshot(forPath: "Patrick McElroy").value as? String
+            self.otherUser = snapshot.childSnapshot(forPath: self.otherAccountName.text!).value as? String
             for rcrd in snapshot.childSnapshot(forPath: self.otherUser).childSnapshot(forPath: "rcrds").children.allObjects as! [DataSnapshot] {
                 let rcrdName = rcrd.key
                 let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
