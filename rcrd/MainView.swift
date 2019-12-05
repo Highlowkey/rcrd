@@ -22,6 +22,8 @@ class MainView: UIViewController {
     
     var user: String = UIDevice.current.identifierForVendor!.uuidString
     
+    var addingNew: Bool = false
+    
     //addRcrdView outlets
     @IBOutlet weak var rcrdText: UITextField!
     @IBOutlet weak var valueText: UITextField!
@@ -44,6 +46,9 @@ class MainView: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        yourRcrds.rcrds.removeAll()
+        self.view.viewWithTag(2)!.alpha = 0
+        self.view.viewWithTag(3)!.alpha = 0
         ref.child(user).child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
             for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
                 let rcrdName = rcrd.key
@@ -198,6 +203,9 @@ class MainView: UIViewController {
                     }
                 firstFilled = true
                 self.view.viewWithTag(2)!.isHidden = false
+                UIView.animate(withDuration: 1, animations: {
+                    self.view.viewWithTag(2)!.alpha = 1
+                }, completion:  nil)
                 }
             }
             else {
@@ -209,7 +217,11 @@ class MainView: UIViewController {
                         twoBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
                     }
                     self.view.viewWithTag(3)!.isHidden = false
-                    }
+                }
+                self.view.viewWithTag(3)!.isHidden = false
+                UIView.animate(withDuration: 1, animations: {
+                    self.view.viewWithTag(3)!.alpha = 1
+                }, completion:  nil)
                 }
         }
     }
