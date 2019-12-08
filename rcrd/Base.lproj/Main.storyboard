@@ -404,20 +404,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your account name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-4z-EHa">
-                                <rect key="frame" x="110" y="255" width="195" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your Name" placeholder="your account name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-4z-EHa">
+                                <rect key="frame" x="41" y="40" width="312" height="52"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
-                                <rect key="frame" x="130" y="344" width="155" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update Account Name"/>
-                                <connections>
-                                    <action selector="updateAccount:" destination="BBw-KK-QMC" eventType="touchUpInside" id="sXG-qa-Woi"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2im-O5-g16">
                                 <rect key="frame" x="150" y="534" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -432,13 +423,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
+                                <rect key="frame" x="41" y="100" width="85" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <state key="normal" title="edit">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateAccount:" destination="BBw-KK-QMC" eventType="touchUpInside" id="sXG-qa-Woi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yLU-mS-JX2" firstAttribute="top" secondItem="4fR-4z-EHa" secondAttribute="bottom" constant="8" id="OkG-Mu-h6b"/>
+                            <constraint firstItem="okJ-00-jZ6" firstAttribute="trailing" secondItem="yLU-mS-JX2" secondAttribute="trailing" priority="999" constant="288" id="WAd-zU-7An"/>
+                            <constraint firstItem="okJ-00-jZ6" firstAttribute="trailing" secondItem="4fR-4z-EHa" secondAttribute="trailing" priority="999" constant="61" id="pux-E8-93P"/>
+                            <constraint firstItem="4fR-4z-EHa" firstAttribute="leading" secondItem="okJ-00-jZ6" secondAttribute="leading" constant="41" id="unA-pR-ub4"/>
+                            <constraint firstItem="4fR-4z-EHa" firstAttribute="top" secondItem="okJ-00-jZ6" secondAttribute="top" constant="40" id="usf-z6-hVz"/>
+                            <constraint firstItem="yLU-mS-JX2" firstAttribute="leading" secondItem="okJ-00-jZ6" secondAttribute="leading" constant="41" id="z25-sG-wDT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="okJ-00-jZ6"/>
                     </view>
                     <navigationItem key="navigationItem" id="kFt-Nk-QVv"/>
                     <connections>
                         <outlet property="accountName" destination="4fR-4z-EHa" id="C9C-Ia-cWj"/>
+                        <outlet property="editAccount" destination="yLU-mS-JX2" id="F4j-jb-cqA"/>
                         <outlet property="otherAccountName" destination="QAM-UB-1NJ" id="g3M-pe-d0c"/>
                         <segue destination="wGZ-8Y-brj" kind="show" identifier="otherListSegue" id="5mY-pk-qtB"/>
                     </connections>

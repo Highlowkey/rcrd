@@ -11,11 +11,11 @@ import Firebase
 
 class rcrdInformation {
     
-    var name: String
+    var accountName: String
     var rcrds: [Rcrd] = []
     init(nameIn: String) {
         rcrds = []
-        name = nameIn
+        accountName = nameIn
     }
     
     func findRcrd(name: String) -> Rcrd{
@@ -71,6 +71,6 @@ class rcrdInformation {
         return highestValue
     }
 }
-var yourRcrds = rcrdInformation(nameIn: "rcrds")
-var otherRcrds = rcrdInformation(nameIn: "otherRcrds")
+var yourRcrds = rcrdInformation(nameIn: "Your Name")
+var otherRcrds = rcrdInformation(nameIn: "Other Name")
 

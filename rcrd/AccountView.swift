@@ -17,18 +17,32 @@ class AccountView: UIViewController {
     
     @IBOutlet weak var accountName: UITextField!
     @IBOutlet weak var otherAccountName: UITextField!
+    @IBOutlet weak var editAccount: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        accountName.text = yourRcrds.accountName
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func updateAccount(_ sender: Any) {
-        ref.child(accountName.text ?? "testing").setValue(UIDevice.current.identifierForVendor?.uuidString)
+        if(accountName.isUserInteractionEnabled) {
+            accountName.resignFirstResponder()
+            accountName.isUserInteractionEnabled = false
+            ref.child(accountName.text ?? "testing").setValue(UIDevice.current.identifierForVendor?.uuidString)
+            editAccount.setTitle("edit", for: .normal)
+            yourRcrds.accountName = accountName.text!
+        }
+        else {
+            self.accountName.isUserInteractionEnabled = true
+            accountName.becomeFirstResponder()
+            editAccount.setTitle("done", for: .normal)
+        }
     }
     
     @IBAction func showAccount(_ sender: Any) {
+        otherRcrds.rcrds.removeAll()
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
             self.otherUser = snapshot.childSnapshot(forPath: self.otherAccountName.text!).value as? String
             for rcrd in snapshot.childSnapshot(forPath: self.otherUser).childSnapshot(forPath: "rcrds").children.allObjects as! [DataSnapshot] {
@@ -42,8 +56,8 @@ class AccountView: UIViewController {
                         }
                 }
                 otherRcrds.rcrds.append(Rcrd(rcrdName, rcrdValuesArray, isFollowing, rcrdType))
-                self.performSegue(withIdentifier: "otherListSegue", sender: self)
             }
+            self.performSegue(withIdentifier: "otherListSegue", sender: self)
         })
     }
     
