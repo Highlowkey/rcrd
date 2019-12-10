@@ -56,6 +56,7 @@ class RcrdView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         ref.child(user).child("rcrds").child(rcrdDisplayed.rcrdName).setValue(["type": types[pickerView.selectedRow(inComponent: 0)]])
+        yourRcrds.rcrds[yourRcrds.rcrds.firstIndex(of: rcrdDisplayed)!].rcrdType = types[pickerView.selectedRow(inComponent: 0)]
         return types[row]
     }
     

@@ -30,9 +30,10 @@ class AccountView: UIViewController {
         if(accountName.isUserInteractionEnabled) {
             accountName.resignFirstResponder()
             accountName.isUserInteractionEnabled = false
-            ref.child(accountName.text ?? "testing").setValue(UIDevice.current.identifierForVendor?.uuidString)
+            ref.child(accountName.text ?? "testing").setValue(UIDevice.current.identifierForVendor!.uuidString)
             editAccount.setTitle("edit", for: .normal)
             yourRcrds.accountName = accountName.text!
+            ref.child(UIDevice.current.identifierForVendor!.uuidString).child("name").setValue(yourRcrds.accountName)
         }
         else {
             self.accountName.isUserInteractionEnabled = true
