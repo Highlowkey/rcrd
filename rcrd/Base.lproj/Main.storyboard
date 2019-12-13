@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="102" id="wk9-Hq-oJq"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yzp-qU-r9O">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcrd_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yzp-qU-r9O">
                                 <rect key="frame" x="138" y="30" width="139" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yzp-qU-r9O" secondAttribute="height" multiplier="139:67" id="sqt-1i-Lut"/>
@@ -62,7 +62,7 @@
                             <view hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="oneRrkd" translatesAutoresizingMaskIntoConstraints="NO" id="cob-SK-pYQ" userLabel="One View">
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
                                         <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
@@ -159,7 +159,7 @@
                             <view hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="twoRkrd" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-AA-cY4" userLabel="Two View">
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
                                         <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
@@ -256,7 +256,7 @@
                             <view hidden="YES" tag="1" contentMode="scaleToFill" restorationIdentifier="addRkrdView" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-wB-tJ8" userLabel="add_rkrd_view">
                                 <rect key="frame" x="45" y="252" width="324" height="352"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_rkrd_popup" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-xE-pY1">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_rcrd_popup" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-xE-pY1">
                                         <rect key="frame" x="50" y="39" width="225" height="292"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8ek-xE-pY1" secondAttribute="height" multiplier="225:292" id="VoH-5V-O9K"/>
@@ -528,21 +528,63 @@
             </objects>
             <point key="canvasLocation" x="221.73913043478262" y="806.91964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend View-->
         <scene sceneID="gCg-2o-um8">
             <objects>
-                <viewController id="yOV-kF-aMd" sceneMemberID="viewController">
+                <viewController id="yOV-kF-aMd" customClass="FriendView" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i9O-rB-Qbb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28F-nV-RhQ">
+                                <rect key="frame" x="87" y="284" width="240" height="181"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_friend_popup" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-Ej-zc7">
+                                        <rect key="frame" x="-18" y="13" width="276" height="155"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="155" id="2VK-No-p2L"/>
+                                            <constraint firstAttribute="width" constant="276" id="uqg-h4-DMg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0l-im-vi2">
+                                        <rect key="frame" x="72" y="30" width="96" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Ex-Ej-zc7" firstAttribute="centerX" secondItem="28F-nV-RhQ" secondAttribute="centerX" id="CVT-Km-V3O"/>
+                                    <constraint firstItem="c0l-im-vi2" firstAttribute="centerX" secondItem="28F-nV-RhQ" secondAttribute="centerX" id="GqX-Xm-nEw"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Ex-Ej-zc7" secondAttribute="bottom" constant="13" id="en1-ij-0yV"/>
+                                    <constraint firstItem="0Ex-Ej-zc7" firstAttribute="top" secondItem="28F-nV-RhQ" secondAttribute="top" constant="13" id="q7a-MF-o3a"/>
+                                    <constraint firstItem="0Ex-Ej-zc7" firstAttribute="top" secondItem="c0l-im-vi2" secondAttribute="bottom" constant="-38" id="syE-oJ-ljv"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-cZ-tbP">
+                                <rect key="frame" x="159" y="713" width="97" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Friend"/>
+                                <connections>
+                                    <action selector="addFriend:" destination="JAU-hW-Cxd" eventType="touchUpInside" id="lx8-Cb-fgQ"/>
+                                    <action selector="addFriend:" destination="yOV-kF-aMd" eventType="touchUpInside" id="ngb-6v-Ho2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="28F-nV-RhQ" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="87" id="FxL-E6-btV"/>
+                            <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="28F-nV-RhQ" secondAttribute="trailing" constant="87" id="nPr-eb-48P"/>
+                            <constraint firstItem="28F-nV-RhQ" firstAttribute="top" secondItem="YLh-TL-5lc" secondAttribute="top" constant="284" id="s4C-Pl-xrJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YLh-TL-5lc"/>
                     </view>
                     <navigationItem key="navigationItem" id="bBK-UL-H8q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAy-aq-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JAU-hW-Cxd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="222" y="1472"/>
+            <point key="canvasLocation" x="221.73913043478262" y="1471.875"/>
         </scene>
         <!--Rcrd View-->
         <scene sceneID="P7y-6Q-Spw">
@@ -635,15 +677,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_friend_popup" width="164" height="115"/>
+        <image name="add_rcrd_popup" width="164" height="209"/>
         <image name="add_rkrd" width="66.666664123535156" height="66.666664123535156"/>
-        <image name="add_rkrd_popup" width="164" height="209"/>
         <image name="add_value" width="45.333332061767578" height="45.333332061767578"/>
         <image name="bottom_rect" width="1125" height="2437"/>
         <image name="done" width="220" height="60"/>
         <image name="list_segue" width="179" height="145"/>
         <image name="other_sharing_logo" width="116.5" height="79"/>
-        <image name="rkrd_background" width="859" height="1243"/>
-        <image name="rkrd_logo" width="288" height="112"/>
+        <image name="rcrd_background" width="859" height="1243"/>
+        <image name="rcrd_logo" width="288" height="112"/>
         <image name="settings_logo" width="126" height="126"/>
         <image name="sharing_logo" width="155" height="155"/>
         <image name="top_bar" width="1125" height="182"/>

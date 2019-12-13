@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		922D146AF5A9F81EFFE0577F /* Pods_rcrd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68482C560EB504F62E68E812 /* Pods_rcrd.framework */; };
 		CD0D8E6F238B514200647A2E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CD0D8E6E238B514200647A2E /* Podfile */; };
+		CD2C44AF23A41E81009B6973 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C44AE23A41E81009B6973 /* FriendView.swift */; };
 		CD53EF8523711C8E0096C84F /* RcrdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53EF8423711C8E0096C84F /* RcrdList.swift */; };
 		CD5B3DFF236F949200B61356 /* Rcrd.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFC236F949200B61356 /* Rcrd.swift */; };
 		CD5B3E00236F949200B61356 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B3DFD236F949200B61356 /* AccountView.swift */; };
@@ -47,6 +48,7 @@
 		68482C560EB504F62E68E812 /* Pods_rcrd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rcrd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A725BB81AE43F29A461A239D /* Pods-rkrd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rkrd.debug.xcconfig"; path = "Target Support Files/Pods-rkrd/Pods-rkrd.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0D8E6E238B514200647A2E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CD2C44AE23A41E81009B6973 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		CD53EF8423711C8E0096C84F /* RcrdList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RcrdList.swift; sourceTree = "<group>"; };
 		CD5B3DFC236F949200B61356 /* Rcrd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rcrd.swift; sourceTree = "<group>"; };
 		CD5B3DFD236F949200B61356 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				CD5B3DFC236F949200B61356 /* Rcrd.swift */,
 				CD5B3E02236F94A000B61356 /* MainView.swift */,
 				CD5B3DFE236F949200B61356 /* RcrdView.swift */,
+				CD2C44AE23A41E81009B6973 /* FriendView.swift */,
 				CD53EF8423711C8E0096C84F /* RcrdList.swift */,
 				CDF8CA81237DC795003BC6C5 /* RcrdCell.swift */,
 				CDF8F59822B95C9F0090A05C /* AppDelegate.swift */,
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF8CA84237DD0AF003BC6C5 /* global.swift in Sources */,
+				CD2C44AF23A41E81009B6973 /* FriendView.swift in Sources */,
 				CD53EF8523711C8E0096C84F /* RcrdList.swift in Sources */,
 				CD5B3E00236F949200B61356 /* AccountView.swift in Sources */,
 				CD5B3DFF236F949200B61356 /* Rcrd.swift in Sources */,
