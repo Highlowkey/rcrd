@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="666" width="114" height="133"/>
+                                <rect key="frame" x="150" y="732.5" width="114" height="66.5"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRcrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="wPP-fa-eEk"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
@@ -160,7 +160,7 @@
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rkrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
@@ -324,7 +324,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prn-DJ-HIs">
-                                <rect key="frame" x="53" y="773" width="51" height="43"/>
+                                <rect key="frame" x="53" y="784" width="51" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="77l-ZU-P6Y"/>
                                     <constraint firstAttribute="width" constant="51" id="xnV-Xb-PFo"/>
@@ -332,6 +332,17 @@
                                 <state key="normal" image="list_segue"/>
                                 <connections>
                                     <action selector="listSegue:" destination="7C4-iX-lGN" eventType="touchUpInside" id="CUe-nG-N9Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofr-fJ-9BK">
+                                <rect key="frame" x="289" y="784" width="81" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="KDr-bI-OxH"/>
+                                    <constraint firstAttribute="width" constant="81" id="wEK-k8-T3Y"/>
+                                </constraints>
+                                <state key="normal" image="other_sharing_logo"/>
+                                <connections>
+                                    <segue destination="yOV-kF-aMd" kind="show" id="ZpV-B9-wyA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -350,6 +361,7 @@
                             <constraint firstItem="yK7-f9-1vw" firstAttribute="leading" secondItem="rlc-VO-rGm" secondAttribute="leading" priority="500" constant="344" id="N4S-ML-8yc"/>
                             <constraint firstItem="MU6-1g-x1y" firstAttribute="top" secondItem="osN-LF-Cn4" secondAttribute="bottom" constant="13" id="Pes-w7-xUx"/>
                             <constraint firstItem="Wy9-wB-tJ8" firstAttribute="top" secondItem="rlc-VO-rGm" secondAttribute="top" constant="208" id="Q4C-AW-zF1"/>
+                            <constraint firstItem="IfL-3Y-PMN" firstAttribute="top" secondItem="ofr-fJ-9BK" secondAttribute="top" constant="-20" id="QvN-Za-clm"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="9hE-gS-HJ3" secondAttribute="trailing" priority="500" constant="344" id="Rn4-oN-TfX"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="o3c-iB-1j9" secondAttribute="trailing" constant="150" id="SZy-JQ-vUw"/>
                             <constraint firstItem="9hE-gS-HJ3" firstAttribute="top" secondItem="rlc-VO-rGm" secondAttribute="top" id="Sn0-5G-m64"/>
@@ -362,8 +374,9 @@
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="IfL-3Y-PMN" secondAttribute="trailing" constant="-3" id="cB0-MX-B8k"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="bottom" secondItem="o3c-iB-1j9" secondAttribute="bottom" constant="63" id="fp4-Db-XWv"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="yzp-qU-r9O" secondAttribute="trailing" constant="137" id="gy7-jb-Cw2"/>
+                            <constraint firstItem="ofr-fJ-9BK" firstAttribute="trailing" secondItem="IfL-3Y-PMN" secondAttribute="trailing" constant="-47" id="h2o-KS-RHF"/>
                             <constraint firstItem="IfL-3Y-PMN" firstAttribute="leading" secondItem="prn-DJ-HIs" secondAttribute="leading" constant="-55" id="l3X-9w-931"/>
-                            <constraint firstItem="IfL-3Y-PMN" firstAttribute="top" secondItem="prn-DJ-HIs" secondAttribute="top" constant="-9" id="lXf-JY-1i8"/>
+                            <constraint firstItem="IfL-3Y-PMN" firstAttribute="top" secondItem="prn-DJ-HIs" secondAttribute="top" constant="-20" id="lXf-JY-1i8"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="bottom" secondItem="Wy9-wB-tJ8" secondAttribute="bottom" constant="258" id="lzE-2C-hzT"/>
                             <constraint firstItem="rlc-VO-rGm" firstAttribute="trailing" secondItem="Wy9-wB-tJ8" secondAttribute="trailing" constant="45" id="mcK-ay-i0z"/>
                             <constraint firstItem="z4R-Ld-ebw" firstAttribute="top" secondItem="osN-LF-Cn4" secondAttribute="bottom" constant="13" id="u7C-ai-GWK"/>
@@ -394,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le5-DT-abR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="118"/>
+            <point key="canvasLocation" x="-794.20289855072474" y="117.85714285714285"/>
         </scene>
         <!--Account View-->
         <scene sceneID="jF0-wk-LCI">
@@ -423,7 +436,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
                                 <rect key="frame" x="41" y="100" width="85" height="35"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <state key="normal" title="edit">
@@ -461,29 +474,29 @@
         <scene sceneID="Bfc-cT-0k0">
             <objects>
                 <tableViewController id="wGZ-8Y-brj" customClass="RcrdList" customModule="rcrd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xGf-2i-Rp6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xGf-2i-Rp6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rcrdCell" id="ax6-hi-uff" customClass="RcrdCell" customModule="rcrd" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ax6-hi-uff" id="ml9-fz-aUu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-5T-kx9">
-                                            <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                            <rect key="frame" x="343" y="19.5" width="51" height="31"/>
                                             <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="follwingChange:" destination="ax6-hi-uff" eventType="valueChanged" id="Rxb-UF-ioG"/>
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rcrd:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-gr-sBq">
-                                            <rect key="frame" x="144" y="12" width="36" height="20"/>
+                                            <rect key="frame" x="144" y="25.5" width="36" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -514,6 +527,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdh-TY-qtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="221.73913043478262" y="806.91964285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gCg-2o-um8">
+            <objects>
+                <viewController id="yOV-kF-aMd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i9O-rB-Qbb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YLh-TL-5lc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bBK-UL-H8q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAy-aq-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="1472"/>
         </scene>
         <!--Rcrd View-->
         <scene sceneID="P7y-6Q-Spw">
@@ -548,7 +577,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="296" id="JWk-KT-l83"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Delete Rkrd">
+                                <state key="normal" title="Delete Rcrd">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -612,6 +641,7 @@
         <image name="bottom_rect" width="1125" height="2437"/>
         <image name="done" width="220" height="60"/>
         <image name="list_segue" width="179" height="145"/>
+        <image name="other_sharing_logo" width="116.5" height="79"/>
         <image name="rkrd_background" width="859" height="1243"/>
         <image name="rkrd_logo" width="288" height="112"/>
         <image name="settings_logo" width="126" height="126"/>

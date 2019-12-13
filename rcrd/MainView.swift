@@ -50,7 +50,9 @@ class MainView: UIViewController {
         self.view.viewWithTag(2)!.alpha = 0
         self.view.viewWithTag(3)!.alpha = 0
         ref.child(user).child("name").observeSingleEvent(of: .value, with: {(snapshot) in
-            yourRcrds.accountName = snapshot.value as! String
+            if(snapshot.exists()) {
+                yourRcrds.accountName = snapshot.value as! String
+            }
         })
         ref.child(user).child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
             for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
@@ -143,6 +145,7 @@ class MainView: UIViewController {
         for n in yourRcrds.rcrds {
             ref.child(user).child("rcrds").child(n.rcrdName).child("type").setValue(n.rcrdType)
             ref.child(user).child("rcrds").child(n.rcrdName).child("following").setValue(n.isFollowing)
+            ref.child(user).child("rcrds").child(n.rcrdName).child("values").removeValue()
             for a in n.rcrdValuesArray {
                 ref.child(user).child("rcrds").child(n.rcrdName).child("values").childByAutoId().setValue(a)
             }
