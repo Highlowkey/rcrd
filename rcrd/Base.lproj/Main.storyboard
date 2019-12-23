@@ -122,7 +122,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="jbd-uf-VBw"/>
                                         </constraints>
-                                        <state key="normal" image="add_value"/>
+                                        <state key="normal" image="add_value">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="addRcrdOne:" destination="7C4-iX-lGN" eventType="touchUpInside" id="Oc6-9z-1oN"/>
                                         </connections>
@@ -536,8 +538,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRU-lB-muF">
+                                <rect key="frame" x="38" y="34" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="8bw-1p-wQs"/>
+                                    <constraint firstAttribute="width" constant="170" id="8jm-DM-Lfy"/>
+                                </constraints>
+                                <state key="normal" image="friend_bubble"/>
+                                <connections>
+                                    <action selector="showFriend:" destination="yOV-kF-aMd" eventType="touchUpInside" id="Zfz-bW-Cba"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-TN-9fS">
+                                <rect key="frame" x="83.5" y="50" width="79" height="136.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="114"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christopher McElroy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-LI-Twh">
+                                <rect key="frame" x="42" y="212" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28F-nV-RhQ">
-                                <rect key="frame" x="87" y="284" width="240" height="181"/>
+                                <rect key="frame" x="87" y="270" width="240" height="181"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_friend_popup" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-Ej-zc7">
                                         <rect key="frame" x="-18" y="13" width="276" height="155"/>
@@ -552,19 +577,44 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCa-Yr-alP">
+                                        <rect key="frame" x="38" y="109" width="164" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="GYh-RY-38E"/>
+                                            <constraint firstAttribute="width" constant="164" id="rgb-xf-Wqk"/>
+                                        </constraints>
+                                        <state key="normal" image="add_friend"/>
+                                        <connections>
+                                            <action selector="showAccount:" destination="yOV-kF-aMd" eventType="touchUpInside" id="h26-5T-jP0"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-lq-0mm">
+                                        <rect key="frame" x="55" y="61" width="130" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="Hyh-uD-mtm"/>
+                                            <constraint firstAttribute="height" constant="34" id="WqC-Vz-zWR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="VCa-Yr-alP" firstAttribute="top" secondItem="NJP-lq-0mm" secondAttribute="bottom" constant="14" id="70F-sV-ph8"/>
                                     <constraint firstItem="0Ex-Ej-zc7" firstAttribute="centerX" secondItem="28F-nV-RhQ" secondAttribute="centerX" id="CVT-Km-V3O"/>
                                     <constraint firstItem="c0l-im-vi2" firstAttribute="centerX" secondItem="28F-nV-RhQ" secondAttribute="centerX" id="GqX-Xm-nEw"/>
+                                    <constraint firstItem="NJP-lq-0mm" firstAttribute="top" secondItem="c0l-im-vi2" secondAttribute="bottom" constant="10" id="P5T-eI-NLP"/>
                                     <constraint firstAttribute="bottom" secondItem="0Ex-Ej-zc7" secondAttribute="bottom" constant="13" id="en1-ij-0yV"/>
                                     <constraint firstItem="0Ex-Ej-zc7" firstAttribute="top" secondItem="28F-nV-RhQ" secondAttribute="top" constant="13" id="q7a-MF-o3a"/>
                                     <constraint firstItem="0Ex-Ej-zc7" firstAttribute="top" secondItem="c0l-im-vi2" secondAttribute="bottom" constant="-38" id="syE-oJ-ljv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-cZ-tbP">
-                                <rect key="frame" x="159" y="713" width="97" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Friend"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-cZ-tbP">
+                                <rect key="frame" x="108.5" y="725" width="197" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="V3Z-yl-Qkd"/>
+                                    <constraint firstAttribute="height" constant="45" id="yfK-mF-Nqz"/>
+                                </constraints>
+                                <state key="normal" image="find_friend"/>
                                 <connections>
                                     <action selector="addFriend:" destination="JAU-hW-Cxd" eventType="touchUpInside" id="lx8-Cb-fgQ"/>
                                     <action selector="addFriend:" destination="yOV-kF-aMd" eventType="touchUpInside" id="ngb-6v-Ho2"/>
@@ -573,13 +623,30 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VCa-Yr-alP" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="251-50-uSB"/>
                             <constraint firstItem="28F-nV-RhQ" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="87" id="FxL-E6-btV"/>
+                            <constraint firstItem="XRU-lB-muF" firstAttribute="top" secondItem="YLh-TL-5lc" secondAttribute="top" constant="34" id="TFq-CE-VDQ"/>
+                            <constraint firstItem="yNZ-TN-9fS" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="-154" id="Vov-Fm-9ag"/>
+                            <constraint firstItem="XRU-lB-muF" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="38" id="WdJ-qv-A66"/>
+                            <constraint firstItem="pQ8-LI-Twh" firstAttribute="centerX" secondItem="XRU-lB-muF" secondAttribute="centerX" id="Zjq-mE-Fxy"/>
+                            <constraint firstItem="9m7-cZ-tbP" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="Zwh-iQ-Jrv"/>
+                            <constraint firstItem="YLh-TL-5lc" firstAttribute="bottom" secondItem="28F-nV-RhQ" secondAttribute="bottom" constant="357" id="b1o-0p-NEW"/>
+                            <constraint firstItem="YLh-TL-5lc" firstAttribute="bottom" secondItem="9m7-cZ-tbP" secondAttribute="bottom" constant="38" id="cyU-Wc-fkx"/>
+                            <constraint firstItem="NJP-lq-0mm" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="iQ0-1R-Y1S"/>
                             <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="28F-nV-RhQ" secondAttribute="trailing" constant="87" id="nPr-eb-48P"/>
-                            <constraint firstItem="28F-nV-RhQ" firstAttribute="top" secondItem="YLh-TL-5lc" secondAttribute="top" constant="284" id="s4C-Pl-xrJ"/>
+                            <constraint firstItem="pQ8-LI-Twh" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="8" id="s5c-6u-l4A"/>
+                            <constraint firstItem="yNZ-TN-9fS" firstAttribute="centerX" secondItem="XRU-lB-muF" secondAttribute="centerX" id="wIO-F9-PT3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLh-TL-5lc"/>
                     </view>
                     <navigationItem key="navigationItem" id="bBK-UL-H8q"/>
+                    <connections>
+                        <outlet property="friend" destination="XRU-lB-muF" id="Uxm-Jy-pKp"/>
+                        <outlet property="friendDescript" destination="pQ8-LI-Twh" id="tuT-zZ-8qd"/>
+                        <outlet property="friendName" destination="yNZ-TN-9fS" id="Ya5-Ud-k6T"/>
+                        <outlet property="otherAccountName" destination="NJP-lq-0mm" id="vex-0a-qWI"/>
+                        <segue destination="wGZ-8Y-brj" kind="show" identifier="otherListSegue" id="eaX-MT-T5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAy-aq-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JAU-hW-Cxd" userLabel="Exit" sceneMemberID="exit"/>
@@ -677,12 +744,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_friend" width="232" height="54"/>
         <image name="add_friend_popup" width="164" height="115"/>
         <image name="add_rcrd_popup" width="164" height="209"/>
         <image name="add_rkrd" width="66.666664123535156" height="66.666664123535156"/>
         <image name="add_value" width="45.333332061767578" height="45.333332061767578"/>
         <image name="bottom_rect" width="1125" height="2437"/>
         <image name="done" width="220" height="60"/>
+        <image name="find_friend" width="232" height="54"/>
+        <image name="friend_bubble" width="450" height="450"/>
         <image name="list_segue" width="179" height="145"/>
         <image name="other_sharing_logo" width="116.5" height="79"/>
         <image name="rcrd_background" width="859" height="1243"/>
@@ -693,7 +763,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FAw-Zz-fb7"/>
-        <segue reference="ohk-TQ-zTh"/>
+        <segue reference="eaX-MT-T5m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
