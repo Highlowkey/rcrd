@@ -15,6 +15,8 @@ class RcrdList: UITableViewController {
     
     var rcrdArray: [Rcrd]!
     
+    var isYours: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,10 +27,13 @@ class RcrdList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RcrdCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rcrdCell", for: indexPath) as! RcrdCell
-        if (rcrdArray[indexPath.item].rcrdName != "" && rcrdArray[indexPath.item].rcrdValuesArray.count > 0) {
+        if (rcrdArray[indexPath.item].rcrdName != "") {
             cell.rcrd = rcrdArray[indexPath.item]
             cell.numRcrd = indexPath.item
             cell.loadView()
+            if(!isYours) {
+                cell.following.isHidden = true
+            }
         }
         return cell
     }

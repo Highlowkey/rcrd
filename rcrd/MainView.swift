@@ -57,7 +57,7 @@ class MainView: UIViewController {
         ref.child(user).child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
             for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
                 let rcrdName = rcrd.key
-                let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
+                let rcrdType = rcrd.childSnapshot(forPath: "type").childSnapshot(forPath: "0").value as! String
                 let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
                 var rcrdValuesArray: [String] = []
                 if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
@@ -121,6 +121,9 @@ class MainView: UIViewController {
                     if Double(text) != nil {
                         yourRcrds.rcrds[index].rcrdValuesArray.append(valueText!.text!)
                     }
+                }
+                if(yourRcrds.rcrds.count > 1) {
+                    yourRcrds.rcrds[index].isFollowing = false
                 }
             }
             if(!isNew) {
@@ -207,6 +210,11 @@ class MainView: UIViewController {
                         oneAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
                         oneBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
                     }
+                    else {
+                        oneValueText.text = ""
+                        oneAverageValue.text = ""
+                        oneBestValue.text = ""
+                    }
                 firstFilled = true
                 self.view.viewWithTag(2)!.isHidden = false
                 UIView.animate(withDuration: 1, animations: {
@@ -221,6 +229,11 @@ class MainView: UIViewController {
                         twoValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
                         twoAverageValue.text = String(yourRcrds.calcAverageHelper(n.rcrdValuesArray))
                         twoBestValue.text = String(yourRcrds.calcHighestHelper(n.rcrdValuesArray))
+                    }
+                    else {
+                        twoValueText.text = ""
+                        twoAverageValue.text = ""
+                        twoBestValue.text = ""
                     }
                     self.view.viewWithTag(3)!.isHidden = false
                 }

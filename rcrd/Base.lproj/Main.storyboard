@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-iB-1j9">
-                                <rect key="frame" x="150" y="732.5" width="114" height="66.5"/>
+                                <rect key="frame" x="150" y="666" width="114" height="133"/>
                                 <state key="normal" image="add_rkrd"/>
                                 <connections>
                                     <action selector="addRcrdNew:" destination="7C4-iX-lGN" eventType="touchUpInside" id="wPP-fa-eEk"/>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="1" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="MU6-1g-x1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="cVD-Aa-0wc"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="k9C-nH-UzD"/>
@@ -162,7 +162,7 @@
                                 <rect key="frame" x="212" y="115" width="201" height="237"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcrd_background" translatesAutoresizingMaskIntoConstraints="NO" id="z4R-Ld-ebw">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="237"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="201" id="Kzp-aX-NHG"/>
                                             <constraint firstAttribute="height" constant="236.99999999999977" id="ZWe-7H-4mp"/>
@@ -424,22 +424,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2im-O5-g16">
-                                <rect key="frame" x="150" y="534" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="showOtherRcrds"/>
-                                <connections>
-                                    <action selector="showAccount:" destination="BBw-KK-QMC" eventType="touchUpInside" id="W78-9E-E3Q"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for account" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAM-UB-1NJ">
-                                <rect key="frame" x="120" y="458" width="175" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
-                                <rect key="frame" x="41" y="100" width="85" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-mS-JX2">
+                                <rect key="frame" x="41" y="100" width="85" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                 <state key="normal" title="edit">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -464,7 +450,6 @@
                     <connections>
                         <outlet property="accountName" destination="4fR-4z-EHa" id="C9C-Ia-cWj"/>
                         <outlet property="editAccount" destination="yLU-mS-JX2" id="F4j-jb-cqA"/>
-                        <outlet property="otherAccountName" destination="QAM-UB-1NJ" id="g3M-pe-d0c"/>
                         <segue destination="wGZ-8Y-brj" kind="show" identifier="otherListSegue" id="5mY-pk-qtB"/>
                     </connections>
                 </viewController>
@@ -541,8 +526,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRU-lB-muF">
                                 <rect key="frame" x="38" y="34" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="8bw-1p-wQs"/>
-                                    <constraint firstAttribute="width" constant="170" id="8jm-DM-Lfy"/>
+                                    <constraint firstAttribute="width" secondItem="XRU-lB-muF" secondAttribute="height" multiplier="1:1" id="H1y-2S-Mmc"/>
                                 </constraints>
                                 <state key="normal" image="friend_bubble"/>
                                 <connections>
@@ -551,6 +535,9 @@
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-TN-9fS">
                                 <rect key="frame" x="83.5" y="50" width="79" height="136.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yNZ-TN-9fS" secondAttribute="height" multiplier="79:136" id="e4g-T5-XaR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="114"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -588,13 +575,14 @@
                                             <action selector="showAccount:" destination="yOV-kF-aMd" eventType="touchUpInside" id="h26-5T-jP0"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-lq-0mm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your friend" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-lq-0mm">
                                         <rect key="frame" x="55" y="61" width="130" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="Hyh-uD-mtm"/>
                                             <constraint firstAttribute="height" constant="34" id="WqC-Vz-zWR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -620,11 +608,20 @@
                                     <action selector="addFriend:" destination="yOV-kF-aMd" eventType="touchUpInside" id="ngb-6v-Ho2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-ES-VXg">
+                                <rect key="frame" x="160" y="783" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Friends"/>
+                                <connections>
+                                    <action selector="resetFriends:" destination="yOV-kF-aMd" eventType="touchUpInside" id="wh2-bj-EK4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VCa-Yr-alP" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="251-50-uSB"/>
                             <constraint firstItem="28F-nV-RhQ" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="87" id="FxL-E6-btV"/>
+                            <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="XRU-lB-muF" secondAttribute="trailing" constant="206" id="NEo-rN-6hE"/>
                             <constraint firstItem="XRU-lB-muF" firstAttribute="top" secondItem="YLh-TL-5lc" secondAttribute="top" constant="34" id="TFq-CE-VDQ"/>
                             <constraint firstItem="yNZ-TN-9fS" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="-154" id="Vov-Fm-9ag"/>
                             <constraint firstItem="XRU-lB-muF" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="38" id="WdJ-qv-A66"/>
@@ -635,6 +632,7 @@
                             <constraint firstItem="NJP-lq-0mm" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="iQ0-1R-Y1S"/>
                             <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="28F-nV-RhQ" secondAttribute="trailing" constant="87" id="nPr-eb-48P"/>
                             <constraint firstItem="pQ8-LI-Twh" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="8" id="s5c-6u-l4A"/>
+                            <constraint firstItem="XRU-lB-muF" firstAttribute="top" secondItem="yNZ-TN-9fS" secondAttribute="bottom" constant="-152.5" id="sUA-Ib-15V"/>
                             <constraint firstItem="yNZ-TN-9fS" firstAttribute="centerX" secondItem="XRU-lB-muF" secondAttribute="centerX" id="wIO-F9-PT3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLh-TL-5lc"/>
@@ -700,8 +698,8 @@
                                     <constraint firstAttribute="height" constant="104" id="FQQ-Ur-mJI"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rcrd Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-SO-Eyw">
-                                <rect key="frame" x="41" y="406" width="130" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-SO-Eyw">
+                                <rect key="frame" x="41" y="406" width="68" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -763,7 +761,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FAw-Zz-fb7"/>
-        <segue reference="eaX-MT-T5m"/>
+        <segue reference="5mY-pk-qtB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

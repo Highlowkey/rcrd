@@ -36,6 +36,7 @@ class AccountView: UIViewController {
             ref.child(UIDevice.current.identifierForVendor!.uuidString).child("name").setValue(yourRcrds.accountName)
         }
         else {
+            ref.child(accountName.text!).removeValue()
             self.accountName.isUserInteractionEnabled = true
             accountName.becomeFirstResponder()
             editAccount.setTitle("done", for: .normal)
