@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7C4-iX-lGN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7C4-iX-lGN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -608,9 +608,8 @@
                                     <action selector="addFriend:" destination="yOV-kF-aMd" eventType="touchUpInside" id="ngb-6v-Ho2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-ES-VXg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-ES-VXg">
                                 <rect key="frame" x="160" y="783" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset Friends"/>
                                 <connections>
                                     <action selector="resetFriends:" destination="yOV-kF-aMd" eventType="touchUpInside" id="wh2-bj-EK4"/>
@@ -622,6 +621,7 @@
                             <constraint firstItem="VCa-Yr-alP" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="251-50-uSB"/>
                             <constraint firstItem="28F-nV-RhQ" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="87" id="FxL-E6-btV"/>
                             <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="XRU-lB-muF" secondAttribute="trailing" constant="206" id="NEo-rN-6hE"/>
+                            <constraint firstItem="X5g-ES-VXg" firstAttribute="centerX" secondItem="YLh-TL-5lc" secondAttribute="centerX" id="TET-WM-wmY"/>
                             <constraint firstItem="XRU-lB-muF" firstAttribute="top" secondItem="YLh-TL-5lc" secondAttribute="top" constant="34" id="TFq-CE-VDQ"/>
                             <constraint firstItem="yNZ-TN-9fS" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="-154" id="Vov-Fm-9ag"/>
                             <constraint firstItem="XRU-lB-muF" firstAttribute="leading" secondItem="YLh-TL-5lc" secondAttribute="leading" constant="38" id="WdJ-qv-A66"/>
@@ -633,6 +633,7 @@
                             <constraint firstItem="YLh-TL-5lc" firstAttribute="trailing" secondItem="28F-nV-RhQ" secondAttribute="trailing" constant="87" id="nPr-eb-48P"/>
                             <constraint firstItem="pQ8-LI-Twh" firstAttribute="top" secondItem="XRU-lB-muF" secondAttribute="bottom" constant="8" id="s5c-6u-l4A"/>
                             <constraint firstItem="XRU-lB-muF" firstAttribute="top" secondItem="yNZ-TN-9fS" secondAttribute="bottom" constant="-152.5" id="sUA-Ib-15V"/>
+                            <constraint firstItem="X5g-ES-VXg" firstAttribute="top" secondItem="9m7-cZ-tbP" secondAttribute="bottom" constant="13" id="svx-Qa-evY"/>
                             <constraint firstItem="yNZ-TN-9fS" firstAttribute="centerX" secondItem="XRU-lB-muF" secondAttribute="centerX" id="wIO-F9-PT3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLh-TL-5lc"/>
@@ -761,7 +762,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FAw-Zz-fb7"/>
-        <segue reference="5mY-pk-qtB"/>
+        <segue reference="eaX-MT-T5m"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

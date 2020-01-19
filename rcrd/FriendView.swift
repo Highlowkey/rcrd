@@ -47,7 +47,7 @@ class FriendView: UIViewController {
                 if(snapshot.childSnapshot(forPath: self.otherUser).childSnapshot(forPath: "rcrds").exists()) {
                     for rcrd in snapshot.childSnapshot(forPath: self.otherUser).childSnapshot(forPath: "rcrds").children.allObjects as! [DataSnapshot] {
                         let rcrdName = rcrd.key
-                        let rcrdType = rcrd.childSnapshot(forPath: "type").childSnapshot(forPath: "0").value as! String
+                        let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
                         let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
                         var rcrdValuesArray: [String] = []
                         if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {

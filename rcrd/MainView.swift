@@ -57,7 +57,7 @@ class MainView: UIViewController {
         ref.child(user).child("rcrds").observeSingleEvent(of: .value, with: {(snapshot) in
             for rcrd in snapshot.children.allObjects as! [DataSnapshot] {
                 let rcrdName = rcrd.key
-                let rcrdType = rcrd.childSnapshot(forPath: "type").childSnapshot(forPath: "0").value as! String
+                let rcrdType = rcrd.childSnapshot(forPath: "type").value as! String
                 let isFollowing = rcrd.childSnapshot(forPath: "following").value as! Bool
                 var rcrdValuesArray: [String] = []
                 if (rcrd.childSnapshot(forPath: "values").childrenCount > 0) {
@@ -223,7 +223,7 @@ class MainView: UIViewController {
                 }
             }
             else {
-                if (n.rcrdName != "" && n.isFollowing == true) {
+                if (n.rcrdName != "" && n.rcrdName != oneRcrdText.text && n.isFollowing == true) {
                     twoRcrdText.text = n.rcrdName
                     if (n.rcrdValuesArray.count > 0) {
                         twoValueText.text = String(n.rcrdValuesArray[n.rcrdValuesArray.count-1])
@@ -236,12 +236,11 @@ class MainView: UIViewController {
                         twoBestValue.text = ""
                     }
                     self.view.viewWithTag(3)!.isHidden = false
+                    UIView.animate(withDuration: 1, animations: {
+                        self.view.viewWithTag(3)!.alpha = 1
+                    }, completion:  nil)
                 }
-                self.view.viewWithTag(3)!.isHidden = false
-                UIView.animate(withDuration: 1, animations: {
-                    self.view.viewWithTag(3)!.alpha = 1
-                }, completion:  nil)
-                }
+            }
         }
     }
     

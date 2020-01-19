@@ -34,6 +34,7 @@ class AccountView: UIViewController {
             editAccount.setTitle("edit", for: .normal)
             yourRcrds.accountName = accountName.text!
             ref.child(UIDevice.current.identifierForVendor!.uuidString).child("name").setValue(yourRcrds.accountName)
+            self.view.endEditing(true)
         }
         else {
             ref.child(accountName.text!).removeValue()
